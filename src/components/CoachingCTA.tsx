@@ -1,0 +1,44 @@
+import { Button } from "@/components/ui/button";
+import { Users, ArrowRight } from "lucide-react";
+
+const CoachingCTA = () => {
+  return (
+    <section className="py-24 bg-card/50">
+      <div className="container mx-auto px-4">
+        <div className="glow-card p-8 md:p-12 lg:p-16 text-center relative overflow-hidden">
+          {/* Background accents */}
+          <div className="absolute -top-20 -left-20 w-40 h-40 bg-primary/10 rounded-full blur-3xl" />
+          <div className="absolute -bottom-20 -right-20 w-40 h-40 bg-accent/10 rounded-full blur-3xl" />
+          
+          <div className="relative z-10">
+            <div className="icon-chip mx-auto mb-6 w-16 h-16">
+              <Users className="w-8 h-8" />
+            </div>
+            
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display uppercase mb-6">
+              Expert Coaching That{" "}
+              <span className="accent-text-green">Delivers Results</span>
+            </h2>
+            
+            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10">
+              Our trainers guide, motivate, and push you — safely and effectively.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button variant="accent" size="lg" className="group">
+                Meet Our Trainers
+                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+              </Button>
+              <Button variant="cta" size="lg" className="group">
+                Start Training Today
+                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+              </Button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default CoachingCTA;
