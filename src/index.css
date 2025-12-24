@@ -15,8 +15,9 @@
     --popover: 0 0% 7.1%;
     --popover-foreground: 0 0% 100%;
 
-    --primary: 79 100% 59%;
-    --primary-foreground: 0 0% 4.3%;
+    /* Green accent */
+    --primary: 142 70% 45%;
+    --primary-foreground: 0 0% 100%;
 
     --secondary: 0 0% 12%;
     --secondary-foreground: 0 0% 100%;
@@ -24,21 +25,27 @@
     --muted: 0 0% 15%;
     --muted-foreground: 0 0% 63%;
 
-    --accent: 74 62% 42%;
+    /* Purple accent */
+    --accent: 270 70% 55%;
     --accent-foreground: 0 0% 100%;
+
+    /* Orange CTA */
+    --cta: 25 95% 53%;
+    --cta-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
     --border: 0 0% 20%;
     --input: 0 0% 15%;
-    --ring: 79 100% 59%;
+    --ring: 142 70% 45%;
 
-    --radius: 1rem;
+    --radius: 1.125rem;
 
     /* Custom tokens */
-    --neon-glow: 0 0 30px hsl(79 100% 59% / 0.4);
-    --neon-glow-strong: 0 0 50px hsl(79 100% 59% / 0.6);
+    --glow-green: 0 0 30px hsl(142 70% 45% / 0.4);
+    --glow-purple: 0 0 30px hsl(270 70% 55% / 0.4);
+    --glow-orange: 0 0 30px hsl(25 95% 53% / 0.4);
     --glass-bg: hsl(0 0% 100% / 0.05);
     --glass-border: hsl(0 0% 100% / 0.1);
   }
@@ -63,14 +70,23 @@
     @apply bg-card/50 backdrop-blur-xl border border-white/10 rounded-2xl;
   }
 
-  .neon-text {
-    @apply text-primary;
-    text-shadow: 0 0 20px hsl(79 100% 59% / 0.5);
+  .glow-card {
+    @apply bg-card border border-white/10 rounded-2xl transition-all duration-300;
+    box-shadow: 0 0 20px hsl(0 0% 0% / 0.5);
   }
 
-  .neon-border {
-    @apply border-primary;
-    box-shadow: 0 0 20px hsl(79 100% 59% / 0.3);
+  .glow-card:hover {
+    box-shadow: 0 0 30px hsl(142 70% 45% / 0.2), 0 0 20px hsl(270 70% 55% / 0.2);
+  }
+
+  .accent-text-green {
+    @apply text-primary;
+    text-shadow: 0 0 20px hsl(142 70% 45% / 0.5);
+  }
+
+  .accent-text-purple {
+    @apply text-accent;
+    text-shadow: 0 0 20px hsl(270 70% 55% / 0.5);
   }
 
   .hover-lift {
@@ -82,12 +98,20 @@
     box-shadow: 0 20px 40px hsl(0 0% 0% / 0.5);
   }
 
-  .gradient-neon {
-    background: linear-gradient(135deg, hsl(79 100% 59%) 0%, hsl(74 62% 42%) 100%);
+  .gradient-green-purple {
+    background: linear-gradient(135deg, hsl(142 70% 45%) 0%, hsl(270 70% 55%) 100%);
   }
 
   .gradient-dark {
     background: linear-gradient(180deg, hsl(0 0% 4.3%) 0%, hsl(0 0% 7.1%) 100%);
+  }
+
+  .icon-chip {
+    @apply w-14 h-14 rounded-2xl bg-secondary flex items-center justify-center text-primary;
+  }
+
+  .section-divider {
+    @apply bg-gradient-to-r from-transparent via-border to-transparent h-px w-full;
   }
 }
 

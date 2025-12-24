@@ -1,18 +1,19 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
 
 const navLinks = [
-  { label: "Home", href: "#" },
-  { label: "Programs", href: "#" },
-  { label: "Trainers", href: "#" },
-  { label: "Pricing", href: "#" },
-  { label: "Contact", href: "#" },
+  { label: "Home", href: "/" },
+  { label: "Services", href: "/services" },
+  { label: "About Us", href: "/about" },
+  { label: "Contact", href: "/contact" },
 ];
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -33,28 +34,34 @@ const Navbar = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
-          <a href="#" className="text-3xl font-display uppercase neon-text">
-            FORGE
-          </a>
+          <Link to="/" className="text-3xl font-display uppercase accent-text-green">
+            ALL FIT
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.label}
-                href={link.href}
-                className="text-foreground/80 hover:text-primary transition-colors duration-200 font-medium"
+                to={link.href}
+                className={`transition-colors duration-200 font-medium ${
+                  location.pathname === link.href
+                    ? "text-primary"
+                    : "text-foreground/80 hover:text-primary"
+                }`}
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
           </div>
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <Button variant="hero" size="default">
-              Join Now
-            </Button>
+            <Link to="/contact">
+              <Button variant="cta" size="default">
+                Join Now
+              </Button>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -75,18 +82,24 @@ const Navbar = () => {
           <div className="md:hidden py-4 border-t border-border/30">
             <div className="flex flex-col gap-4">
               {navLinks.map((link) => (
-                <a
+                <Link
                   key={link.label}
-                  href={link.href}
-                  className="text-foreground/80 hover:text-primary transition-colors duration-200 font-medium py-2"
+                  to={link.href}
+                  className={`transition-colors duration-200 font-medium py-2 ${
+                    location.pathname === link.href
+                      ? "text-primary"
+                      : "text-foreground/80 hover:text-primary"
+                  }`}
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {link.label}
-                </a>
+                </Link>
               ))}
-              <Button variant="hero" className="mt-4">
-                Join Now
-              </Button>
+              <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)}>
+                <Button variant="cta" className="mt-4 w-full">
+                  Join Now
+                </Button>
+              </Link>
             </div>
           </div>
         )}

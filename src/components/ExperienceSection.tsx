@@ -29,7 +29,7 @@ const ExperienceSection = () => {
               <p className="text-muted-foreground mb-4">
                 Premium equipment and luxurious amenities
               </p>
-              <Button variant="hero" className="group/btn">
+              <Button variant="cta" className="group/btn">
                 Take a Tour
                 <ArrowRight className="w-4 h-4 transition-transform group-hover/btn:translate-x-1" />
               </Button>
