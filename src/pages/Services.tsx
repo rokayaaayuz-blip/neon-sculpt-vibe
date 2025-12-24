@@ -1,56 +1,55 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import { 
-  Dumbbell, 
-  Heart, 
-  Users, 
-  Activity, 
-  ClipboardList, 
-  Brain,
-  Zap,
-  Target,
-  ArrowRight
-} from "lucide-react";
+import { ArrowRight } from "lucide-react";
+
+import featureCardio from "@/assets/feature-cardio.jpg";
+import serviceStrength from "@/assets/service-strength.jpg";
+import servicePersonal from "@/assets/service-personal.jpg";
+import featureRehab from "@/assets/feature-rehab.jpg";
+import featureDiet from "@/assets/feature-diet.jpg";
+import benefitPlan from "@/assets/benefit-plan.jpg";
+import serviceHiit from "@/assets/service-hiit.jpg";
+import serviceTransform from "@/assets/service-transform.jpg";
 
 const services = [
   {
-    icon: Heart,
+    image: featureCardio,
     title: "Cardio Training",
     description: "High-performance treadmills, ellipticals, and cycling machines for endurance and heart health.",
   },
   {
-    icon: Dumbbell,
+    image: serviceStrength,
     title: "Strength Training",
     description: "Professional-grade free weights, machines, and cable systems for muscle building.",
   },
   {
-    icon: Users,
+    image: servicePersonal,
     title: "Personal Training",
     description: "One-on-one coaching with certified trainers who customize every session to your goals.",
   },
   {
-    icon: Activity,
+    image: featureRehab,
     title: "Rehab & Physiotherapy",
     description: "Injury recovery and prevention programs with licensed physiotherapy support.",
   },
   {
-    icon: ClipboardList,
+    image: featureDiet,
     title: "Custom Diet Planning",
     description: "Personalized nutrition plans designed to complement your training and maximize results.",
   },
   {
-    icon: Brain,
+    image: benefitPlan,
     title: "Workout Programming",
     description: "Structured workout plans for beginners to advanced athletes, updated monthly.",
   },
   {
-    icon: Zap,
+    image: serviceHiit,
     title: "HIIT & Functional Training",
     description: "High-intensity interval training and functional movement classes for overall fitness.",
   },
   {
-    icon: Target,
+    image: serviceTransform,
     title: "Body Transformation",
     description: "Comprehensive programs combining training, nutrition, and accountability for lasting change.",
   },
@@ -80,18 +79,24 @@ const Services = () => {
             {services.map((service, index) => (
               <div
                 key={index}
-                className="glow-card p-6 hover-lift animate-fade-up opacity-0"
+                className="glow-card overflow-hidden hover-lift animate-fade-up opacity-0"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="icon-chip mb-4">
-                  <service.icon className="w-6 h-6" />
+                <div className="aspect-[4/3] overflow-hidden">
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                  />
                 </div>
-                <h3 className="text-xl font-display uppercase mb-3 text-foreground">
-                  {service.title}
-                </h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  {service.description}
-                </p>
+                <div className="p-6">
+                  <h3 className="text-xl font-display uppercase mb-3 text-foreground">
+                    {service.title}
+                  </h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed">
+                    {service.description}
+                  </p>
+                </div>
               </div>
             ))}
           </div>

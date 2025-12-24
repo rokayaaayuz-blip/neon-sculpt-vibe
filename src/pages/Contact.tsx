@@ -6,19 +6,19 @@ import {
   Phone, 
   Mail, 
   Clock, 
-  Check, 
-  ArrowRight,
-  Dumbbell,
-  Users,
-  ClipboardList,
-  Heart
+  ArrowRight
 } from "lucide-react";
 
+import benefitEquipment from "@/assets/benefit-equipment.jpg";
+import benefitTrainer from "@/assets/benefit-trainer.jpg";
+import benefitPlan from "@/assets/benefit-plan.jpg";
+import benefitAssessment from "@/assets/benefit-assessment.jpg";
+
 const benefits = [
-  { icon: Dumbbell, text: "Access to all equipment" },
-  { icon: Users, text: "Expert trainer guidance" },
-  { icon: ClipboardList, text: "Custom workout plan" },
-  { icon: Heart, text: "Fitness assessment" },
+  { image: benefitEquipment, text: "Access to all equipment" },
+  { image: benefitTrainer, text: "Expert trainer guidance" },
+  { image: benefitPlan, text: "Custom workout plan" },
+  { image: benefitAssessment, text: "Fitness assessment" },
 ];
 
 const Contact = () => {
@@ -53,19 +53,44 @@ const Contact = () => {
           <h2 className="text-3xl md:text-4xl font-display uppercase text-center mb-12">
             What You <span className="accent-text-green">Get</span>
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
             {benefits.map((benefit, index) => (
               <div
                 key={index}
-                className="glow-card p-6 flex flex-col items-center text-center hover-lift animate-fade-up opacity-0"
+                className="glow-card overflow-hidden hover-lift animate-fade-up opacity-0"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="icon-chip mb-4">
-                  <benefit.icon className="w-6 h-6" />
+                <div className="aspect-square overflow-hidden">
+                  <img
+                    src={benefit.image}
+                    alt={benefit.text}
+                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                  />
                 </div>
-                <span className="text-foreground font-medium">{benefit.text}</span>
+                <div className="p-5 text-center">
+                  <span className="text-foreground font-medium">{benefit.text}</span>
+                </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Google Map Section */}
+      <section className="py-12">
+        <div className="container mx-auto px-4">
+          <div className="glow-card overflow-hidden">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3501.0196235936756!2d77.37014731508236!3d28.651875982412015!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cf1bb1e1a5dbb%3A0x1234567890abcdef!2sC%20Block%2C%20Sector%2062!5e0!3m2!1sen!2sin!4v1234567890"
+              width="100%"
+              height="400"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="w-full"
+              title="ALL FIT Location"
+            />
           </div>
         </div>
       </section>

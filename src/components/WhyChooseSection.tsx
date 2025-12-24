@@ -1,35 +1,33 @@
-import { 
-  Dumbbell, 
-  Users, 
-  ClipboardList, 
-  Heart, 
-  Sparkles, 
-  Trophy 
-} from "lucide-react";
+import featureCardio from "@/assets/feature-cardio.jpg";
+import featureTrainers from "@/assets/feature-trainers.jpg";
+import featureDiet from "@/assets/feature-diet.jpg";
+import featureRehab from "@/assets/feature-rehab.jpg";
+import featureClean from "@/assets/feature-clean.jpg";
+import featureAthletes from "@/assets/feature-athletes.jpg";
 
 const features = [
   {
-    icon: Dumbbell,
+    image: featureCardio,
     text: "Modern Cardio & Strength Equipment",
   },
   {
-    icon: Users,
+    image: featureTrainers,
     text: "Certified Personal & General Trainers",
   },
   {
-    icon: ClipboardList,
+    image: featureDiet,
     text: "Custom Workout & Diet Planning",
   },
   {
-    icon: Heart,
+    image: featureRehab,
     text: "Rehab & Physiotherapy Support",
   },
   {
-    icon: Sparkles,
+    image: featureClean,
     text: "Clean, Motivating & Safe Environment",
   },
   {
-    icon: Trophy,
+    image: featureAthletes,
     text: "Suitable for Beginners to Athletes",
   },
 ];
@@ -49,13 +47,19 @@ const WhyChooseSection = () => {
           {features.map((feature, index) => (
             <div
               key={index}
-              className="glow-card p-6 flex items-center gap-4 hover-lift animate-fade-up opacity-0"
+              className="glow-card overflow-hidden hover-lift animate-fade-up opacity-0"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="icon-chip">
-                <feature.icon className="w-6 h-6" />
+              <div className="aspect-[4/3] overflow-hidden">
+                <img
+                  src={feature.image}
+                  alt={feature.text}
+                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                />
               </div>
-              <span className="text-foreground font-medium">{feature.text}</span>
+              <div className="p-5">
+                <span className="text-foreground font-medium">{feature.text}</span>
+              </div>
             </div>
           ))}
         </div>
