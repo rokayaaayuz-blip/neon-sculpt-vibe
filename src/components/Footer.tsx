@@ -33,7 +33,7 @@ const Footer = () => {
         <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3">
-            <img src={logo} alt="ALL FIT" className="h-12 w-auto border-muted-foreground" />
+            <img alt="ALL FIT" src="/lovable-uploads/03738744-568e-4644-a811-58af3f778e7e.png" className="h-12 w-auto border-border" />
             
           </Link>
 
