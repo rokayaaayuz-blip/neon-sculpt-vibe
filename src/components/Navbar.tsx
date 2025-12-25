@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
-import logo from "@/assets/logo.jpg";
+import logo from "@/assets/logo-af.png";
 const navLinks = [{
   label: "Home",
   href: "/"
@@ -32,7 +32,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3">
-            <img alt="ALL FIT" className="h-12 w-auto" src="/lovable-uploads/c693a472-186b-4cd9-8140-64bbc4d31b8a.jpg" />
+            <img alt="ALL FIT" className="h-12 w-auto" src={logo} />
             
           </Link>
 
