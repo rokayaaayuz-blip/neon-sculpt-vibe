@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Instagram, Facebook, Twitter, Youtube } from "lucide-react";
-import logo from "@/assets/logo-transparent.webp";
+import logo from "@/assets/logo.jpg";
 const footerLinks = [{
   label: "Home",
   href: "/"
@@ -33,7 +33,7 @@ const Footer = () => {
         <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3">
-            <img src={logo} alt="ALL FIT" className="h-12 w-auto" />
+            <img src={logo} alt="ALL FIT" className="h-12 w-auto border-muted" />
             
           </Link>
 

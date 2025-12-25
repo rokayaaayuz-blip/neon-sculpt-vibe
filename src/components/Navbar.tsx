@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
-import logo from "@/assets/logo-transparent.webp";
+import logo from "@/assets/logo.jpg";
 const navLinks = [{
   label: "Home",
   href: "/"
@@ -32,7 +32,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3">
-            <img alt="ALL FIT" className="h-12 w-auto" src={logo} />
+            <img alt="ALL FIT" className="h-12 w-auto object-contain border-[#999999]/[0.82]" src="/lovable-uploads/2493326d-5425-46f6-96b2-d5272247adf4.webp" />
             
           </Link>
 
