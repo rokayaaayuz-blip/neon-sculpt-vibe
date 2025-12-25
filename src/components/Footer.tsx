@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Instagram, Facebook, Twitter, Youtube } from "lucide-react";
-import logo from "@/assets/logo.jpg";
+import logo from "@/assets/logo-transparent.webp";
 const footerLinks = [{
   label: "Home",
   href: "/"
