@@ -32,7 +32,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3">
-            <img alt="ALL FIT" className="h-12 w-auto object-contain border-[#999999]/[0.82]" src="/lovable-uploads/2493326d-5425-46f6-96b2-d5272247adf4.webp" />
+            <img alt="ALL FIT" className="h-12 w-auto" src="/lovable-uploads/c693a472-186b-4cd9-8140-64bbc4d31b8a.jpg" />
             
           </Link>
 
