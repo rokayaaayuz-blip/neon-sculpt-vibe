@@ -32,7 +32,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3">
-            <img src={logo} alt="ALL FIT" className="h-12 w-auto" />
+            <img alt="ALL FIT" className="h-12 w-auto" src="/lovable-uploads/f7264595-a2db-4baa-84e8-fdee21cac13d.png" />
             
           </Link>
 
