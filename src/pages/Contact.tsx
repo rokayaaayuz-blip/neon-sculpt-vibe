@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -8,6 +9,8 @@ import {
   Clock, 
   ArrowRight
 } from "lucide-react";
+import WhatsAppForm from "@/components/WhatsAppForm";
+import InstagramReels from "@/components/InstagramReels";
 
 import benefitEquipment from "@/assets/benefit-equipment.jpg";
 import benefitTrainer from "@/assets/benefit-trainer.jpg";
@@ -22,6 +25,19 @@ const benefits = [
 ];
 
 const Contact = () => {
+  const [isFormOpen, setIsFormOpen] = useState(false);
+
+  const handleJoinNow = () => {
+    const message = encodeURIComponent(
+      "Hello ALL FIT! 👋\n\nI am interested in joining your gym. Could you please share the pricing details and membership plans?"
+    );
+    window.open(`https://wa.me/919667949344?text=${message}`, "_blank");
+  };
+
+  const handlePhone = () => {
+    window.location.href = "tel:+919667949344";
+  };
+
   return (
     <div className="min-h-screen bg-background overflow-x-hidden">
       <Navbar />
@@ -39,7 +55,7 @@ const Contact = () => {
             Your transformation begins with a single step. Join ALL FIT today and become the best version of yourself.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-up opacity-0" style={{ animationDelay: "0.3s" }}>
-            <Button variant="cta" size="xl" className="group">
+            <Button variant="cta" size="xl" className="group" onClick={() => setIsFormOpen(true)}>
               Start Your Journey Today
               <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
             </Button>
@@ -81,7 +97,7 @@ const Contact = () => {
         <div className="container mx-auto px-4">
           <div className="glow-card overflow-hidden">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3501.0196235936756!2d77.37014731508236!3d28.651875982412015!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cf1bb1e1a5dbb%3A0x1234567890abcdef!2sC%20Block%2C%20Sector%2062!5e0!3m2!1sen!2sin!4v1234567890"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3507.5559387661747!2d77.07008631507883!3d28.45055738248825!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d18f3db40fb61%3A0xc8aa41b9b31ebf75!2sSushant%20Lok%20Phase%20I%2C%20Sector%2043%2C%20Gurugram%2C%20Haryana%20122009!5e0!3m2!1sen!2sin!4v1703590000000!5m2!1sen!2sin"
               width="100%"
               height="400"
               style={{ border: 0 }}
@@ -89,7 +105,7 @@ const Contact = () => {
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
               className="w-full"
-              title="ALL FIT Location"
+              title="ALL FIT Location - Sushant Lok Phase I, Sector 43, Gurugram"
             />
           </div>
         </div>
@@ -112,9 +128,9 @@ const Contact = () => {
                   <div>
                     <p className="font-medium text-foreground mb-1">Address</p>
                     <p className="text-muted-foreground">
-                      ALL FIT Gym, C Block<br />
-                      Main Commercial Area<br />
-                      Your City
+                      A, Basement, Block C, 2935<br />
+                      Block C, Sushant Lok Phase I<br />
+                      Sector 43, Gurugram, Haryana 122009
                     </p>
                   </div>
                 </div>
@@ -126,19 +142,21 @@ const Contact = () => {
                   <div>
                     <p className="font-medium text-foreground mb-1">Hours</p>
                     <p className="text-muted-foreground">
-                      Monday - Sunday: 5:00 AM - 11:00 PM<br />
-                      24/7 Access for Members
+                      6:00 AM - 10:00 PM<br />
+                      7 Days a Week
                     </p>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="icon-chip flex-shrink-0">
+                  <button onClick={handlePhone} className="icon-chip flex-shrink-0 hover:bg-secondary/80 transition-colors">
                     <Phone className="w-5 h-5" />
-                  </div>
+                  </button>
                   <div>
                     <p className="font-medium text-foreground mb-1">Phone</p>
-                    <p className="text-muted-foreground">+91 XXXXX XXXXX</p>
+                    <button onClick={handlePhone} className="text-muted-foreground hover:text-primary transition-colors">
+                      +91 9667949344
+                    </button>
                   </div>
                 </div>
 
@@ -148,7 +166,9 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="font-medium text-foreground mb-1">Email</p>
-                    <p className="text-muted-foreground">hello@allfit.in</p>
+                    <a href="mailto:allfit.cblock@gmail.com" className="text-muted-foreground hover:text-primary transition-colors">
+                      allfit.cblock@gmail.com
+                    </a>
                   </div>
                 </div>
               </div>
@@ -168,11 +188,11 @@ const Contact = () => {
                 </p>
                 
                 <div className="space-y-4">
-                  <Button variant="cta" size="lg" className="w-full group">
+                  <Button variant="cta" size="lg" className="w-full group" onClick={() => setIsFormOpen(true)}>
                     Book Free Trial
                     <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                   </Button>
-                  <Button variant="accent" size="lg" className="w-full group">
+                  <Button variant="accent" size="lg" className="w-full group" onClick={handleJoinNow}>
                     Join ALL FIT Today
                     <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                   </Button>
@@ -183,7 +203,16 @@ const Contact = () => {
         </div>
       </section>
 
+      {/* Instagram Reels */}
+      <InstagramReels />
+
       <Footer />
+      
+      <WhatsAppForm 
+        isOpen={isFormOpen} 
+        onClose={() => setIsFormOpen(false)} 
+        formType="trial"
+      />
     </div>
   );
 };
