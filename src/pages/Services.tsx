@@ -1,7 +1,11 @@
+import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import WhatsAppForm from "@/components/WhatsAppForm";
+import InstagramReels from "@/components/InstagramReels";
+import Testimonials from "@/components/Testimonials";
 
 import featureCardio from "@/assets/feature-cardio.jpg";
 import serviceStrength from "@/assets/service-strength.jpg";
@@ -56,6 +60,16 @@ const services = [
 ];
 
 const Services = () => {
+  const [isFormOpen, setIsFormOpen] = useState(false);
+  const [formType, setFormType] = useState<"assessment" | "training">("assessment");
+
+  const handleTalkToTrainer = () => {
+    const message = encodeURIComponent(
+      "Hello ALL FIT! 👋\n\nI would like to talk to a trainer about my fitness goals. Could you please connect me with one?"
+    );
+    window.open(`https://wa.me/919667949344?text=${message}`, "_blank");
+  };
+
   return (
     <div className="min-h-screen bg-background overflow-x-hidden">
       <Navbar />
@@ -103,6 +117,9 @@ const Services = () => {
         </div>
       </section>
 
+      {/* Testimonials */}
+      <Testimonials />
+
       {/* CTA Section */}
       <section className="py-24 bg-card/50">
         <div className="container mx-auto px-4">
@@ -120,11 +137,24 @@ const Services = () => {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button variant="cta" size="lg" className="group">
+                <Button 
+                  variant="cta" 
+                  size="lg" 
+                  className="group"
+                  onClick={() => {
+                    setFormType("assessment");
+                    setIsFormOpen(true);
+                  }}
+                >
                   Book a Free Assessment
                   <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                 </Button>
-                <Button variant="outline" size="lg" className="group">
+                <Button 
+                  variant="outline" 
+                  size="lg" 
+                  className="group"
+                  onClick={handleTalkToTrainer}
+                >
                   Talk to a Trainer
                   <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                 </Button>
@@ -134,7 +164,16 @@ const Services = () => {
         </div>
       </section>
 
+      {/* Instagram Reels */}
+      <InstagramReels />
+
       <Footer />
+      
+      <WhatsAppForm 
+        isOpen={isFormOpen} 
+        onClose={() => setIsFormOpen(false)} 
+        formType={formType}
+      />
     </div>
   );
 };
