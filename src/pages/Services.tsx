@@ -8,13 +8,15 @@ import InstagramReels from "@/components/InstagramReels";
 import Testimonials from "@/components/Testimonials";
 
 import featureCardio from "@/assets/feature-cardio.jpg";
-import serviceStrength from "@/assets/service-strength.jpg";
-import servicePersonal from "@/assets/service-personal.jpg";
+import strengthTraining from "@/assets/strength-training-barbell-workout.jpg";
+import certifiedTrainer from "@/assets/certified-personal-trainer-gym-session.jpg";
 import featureRehab from "@/assets/feature-rehab.jpg";
 import featureDiet from "@/assets/feature-diet.jpg";
-import benefitPlan from "@/assets/benefit-plan.jpg";
-import serviceHiit from "@/assets/service-hiit.jpg";
-import serviceTransform from "@/assets/service-transform.jpg";
+import workoutProgramming from "@/assets/custom-workout-programming-plan.jpg";
+import fitnessAssessment from "@/assets/fitness-assessment-athlete.jpg";
+import bodyTransform from "@/assets/body-transformation-results.jpg";
+import cleanGym from "@/assets/clean-modern-gym-environment.jpg";
+import beginnerAthlete from "@/assets/beginners-to-athletes-training.jpg";
 
 const services = [
   {
@@ -23,12 +25,12 @@ const services = [
     description: "High-performance treadmills, ellipticals, and cycling machines for endurance and heart health.",
   },
   {
-    image: serviceStrength,
+    image: strengthTraining,
     title: "Strength Training",
     description: "Professional-grade free weights, machines, and cable systems for muscle building.",
   },
   {
-    image: servicePersonal,
+    image: certifiedTrainer,
     title: "Personal Training",
     description: "One-on-one coaching with certified trainers who customize every session to your goals.",
   },
@@ -43,19 +45,29 @@ const services = [
     description: "Personalized nutrition plans designed to complement your training and maximize results.",
   },
   {
-    image: benefitPlan,
+    image: workoutProgramming,
     title: "Workout Programming",
     description: "Structured workout plans for beginners to advanced athletes, updated monthly.",
   },
   {
-    image: serviceHiit,
-    title: "HIIT & Functional Training",
-    description: "High-intensity interval training and functional movement classes for overall fitness.",
+    image: cleanGym,
+    title: "Access to All Equipment",
+    description: "Full access to modern cardio machines, free weights, cable systems, and functional training equipment.",
   },
   {
-    image: serviceTransform,
+    image: bodyTransform,
     title: "Body Transformation",
     description: "Comprehensive programs combining training, nutrition, and accountability for lasting change.",
+  },
+  {
+    image: beginnerAthlete,
+    title: "Expert Trainer Guidance",
+    description: "Professional guidance from certified trainers for beginners and advanced athletes alike.",
+  },
+  {
+    image: fitnessAssessment,
+    title: "Fitness Assessment",
+    description: "Comprehensive body composition analysis and fitness testing to track your progress.",
   },
 ];
 
@@ -89,7 +101,7 @@ const Services = () => {
       {/* Services Grid */}
       <section className="py-24">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
             {services.map((service, index) => (
               <div
                 key={index}
