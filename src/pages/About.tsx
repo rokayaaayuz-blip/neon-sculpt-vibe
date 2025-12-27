@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Users, Target, Eye, Dumbbell, Heart, Trophy, Clock } from "lucide-react";
 import InstagramReels from "@/components/InstagramReels";
+import GymGallery from "@/components/GymGallery";
 import gymInterior from "@/assets/gym-interior.jpg";
 
 const teamStats = [
@@ -67,9 +68,6 @@ const About = () => {
           </div>
         </div>
       </section>
-
-      {/* Instagram Reels Section */}
-      <InstagramReels />
 
       {/* Mission & Vision */}
       <section className="py-24">
@@ -150,6 +148,12 @@ const About = () => {
           </div>
         </div>
       </section>
+
+      {/* Gallery Section */}
+      <GymGallery />
+
+      {/* Instagram Reels Section */}
+      <InstagramReels />
 
       <Footer />
     </div>

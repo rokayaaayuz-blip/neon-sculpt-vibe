@@ -1,9 +1,9 @@
 import featureCardio from "@/assets/feature-cardio.jpg";
-import featureTrainers from "@/assets/feature-trainers.jpg";
+import certifiedTrainer from "@/assets/certified-personal-trainer-gym-session.jpg";
 import featureDiet from "@/assets/feature-diet.jpg";
 import featureRehab from "@/assets/feature-rehab.jpg";
-import featureClean from "@/assets/feature-clean.jpg";
-import featureAthletes from "@/assets/feature-athletes.jpg";
+import cleanGym from "@/assets/clean-modern-gym-environment.jpg";
+import beginnerAthlete from "@/assets/beginners-to-athletes-training.jpg";
 
 const features = [
   {
@@ -11,7 +11,7 @@ const features = [
     text: "Modern Cardio & Strength Equipment",
   },
   {
-    image: featureTrainers,
+    image: certifiedTrainer,
     text: "Certified Personal & General Trainers",
   },
   {
@@ -23,11 +23,11 @@ const features = [
     text: "Rehab & Physiotherapy Support",
   },
   {
-    image: featureClean,
+    image: cleanGym,
     text: "Clean, Motivating & Safe Environment",
   },
   {
-    image: featureAthletes,
+    image: beginnerAthlete,
     text: "Suitable for Beginners to Athletes",
   },
 ];
