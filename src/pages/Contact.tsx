@@ -12,16 +12,16 @@ import {
 import WhatsAppForm from "@/components/WhatsAppForm";
 import InstagramReels from "@/components/InstagramReels";
 
-import benefitEquipment from "@/assets/benefit-equipment.jpg";
-import benefitTrainer from "@/assets/benefit-trainer.jpg";
-import benefitPlan from "@/assets/benefit-plan.jpg";
-import benefitAssessment from "@/assets/benefit-assessment.jpg";
+import dumbbellRack from "@/assets/dumbbell-rack-weight-zone.jpg";
+import powerRack from "@/assets/power-rack-squat-zone.jpg";
+import strengthArea from "@/assets/gym-strength-training-area.jpg";
+import equipmentZone from "@/assets/gym-equipment-training-zone.jpg";
 
 const benefits = [
-  { image: benefitEquipment, text: "Access to all equipment" },
-  { image: benefitTrainer, text: "Expert trainer guidance" },
-  { image: benefitPlan, text: "Custom workout plan" },
-  { image: benefitAssessment, text: "Fitness assessment" },
+  { image: dumbbellRack, text: "Access to all equipment" },
+  { image: powerRack, text: "Expert trainer guidance" },
+  { image: strengthArea, text: "Custom workout plan" },
+  { image: equipmentZone, text: "Fitness assessment" },
 ];
 
 const Contact = () => {
@@ -39,7 +39,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background overflow-x-hidden">
+    <div className="min-h-screen bg-background overflow-x-hidden pb-0 md:pb-0">
       <Navbar />
       
       {/* Motivational CTA Panel */}

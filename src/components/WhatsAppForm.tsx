@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Send, User, Phone, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -22,6 +22,23 @@ const WhatsAppForm = ({ isOpen, onClose, formType = "trial" }: WhatsAppFormProps
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [joiningDate, setJoiningDate] = useState("");
+
+  // Hide bottom nav when form is open on mobile
+  useEffect(() => {
+    const bottomNav = document.querySelector('.mobile-bottom-nav');
+    if (bottomNav) {
+      if (isOpen) {
+        bottomNav.classList.add('hidden');
+      } else {
+        bottomNav.classList.remove('hidden');
+      }
+    }
+    return () => {
+      if (bottomNav) {
+        bottomNav.classList.remove('hidden');
+      }
+    };
+  }, [isOpen]);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -60,15 +77,15 @@ I would like to know more about your gym services.`;
             className="fixed inset-0 bg-background/80 backdrop-blur-sm z-50"
           />
           
-          {/* Form Modal */}
+          {/* Form Modal - Centered on all devices */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
             transition={{ type: "spring", duration: 0.5 }}
-            className="fixed left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-50 w-full max-w-md"
+            className="fixed inset-0 z-50 flex items-center justify-center p-4"
           >
-            <div className="glow-card p-8 mx-4 relative overflow-hidden">
+            <div className="glow-card p-6 md:p-8 w-full max-w-md relative overflow-hidden">
               {/* Background accents */}
               <div className="absolute -top-20 -right-20 w-40 h-40 bg-primary/10 rounded-full blur-3xl" />
               <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-accent/10 rounded-full blur-3xl" />

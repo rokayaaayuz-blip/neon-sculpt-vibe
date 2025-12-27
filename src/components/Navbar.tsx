@@ -173,8 +173,8 @@ const Navbar = () => {
         </motion.div>
       )}
 
-      {/* Mobile Bottom Navbar */}
-      <div className="md:hidden fixed bottom-0 left-0 right-0 z-50 pb-4 px-4">
+      {/* Mobile Bottom Navbar - Hidden on Contact page form */}
+      <div className="md:hidden fixed bottom-0 left-0 right-0 z-40 pb-4 px-4 mobile-bottom-nav">
         <div className="flex items-center justify-around bg-background/80 border border-border backdrop-blur-lg py-2 px-2 rounded-full shadow-lg">
           {navItems.map((item) => {
             const Icon = item.icon;
