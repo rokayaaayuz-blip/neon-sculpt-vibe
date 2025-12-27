@@ -1,40 +1,40 @@
-import cleanGym from "@/assets/clean-modern-gym-environment.jpg";
-import trainerSession from "@/assets/certified-personal-trainer-gym-session.jpg";
-import strengthTraining from "@/assets/strength-training-barbell-workout.jpg";
-import bodyTransform from "@/assets/body-transformation-results.jpg";
-import beginnerAthlete from "@/assets/beginners-to-athletes-training.jpg";
-import fitnessAssessment from "@/assets/fitness-assessment-athlete.jpg";
+import gymReception from "@/assets/gym-reception-interior.jpg";
+import equipmentZone from "@/assets/gym-equipment-training-zone.jpg";
+import strengthArea from "@/assets/gym-strength-training-area.jpg";
+import dumbbellRack from "@/assets/dumbbell-rack-weight-zone.jpg";
+import cardioArea from "@/assets/gym-cardio-functional-area.jpg";
+import powerRack from "@/assets/power-rack-squat-zone.jpg";
 
 const galleryImages = [
   {
-    src: cleanGym,
-    alt: "Modern cardio equipment at ALL FIT gym Gurugram",
-    title: "Premium Equipment",
+    src: gymReception,
+    alt: "ALL FIT gym reception and motivation wall Gurugram",
+    title: "Reception & Welcome",
   },
   {
-    src: trainerSession,
-    alt: "Certified personal trainer guiding client during workout",
-    title: "Expert Guidance",
+    src: equipmentZone,
+    alt: "Premium gym equipment and training machines at ALL FIT",
+    title: "Training Zone",
   },
   {
-    src: strengthTraining,
-    alt: "Strength training with barbell at ALL FIT gym",
-    title: "Strength Zone",
+    src: strengthArea,
+    alt: "Spacious strength training area with advanced equipment",
+    title: "Strength Area",
   },
   {
-    src: bodyTransform,
-    alt: "Body transformation and muscle building results",
-    title: "Transformation",
+    src: dumbbellRack,
+    alt: "Complete dumbbell rack and free weights at ALL FIT gym",
+    title: "Free Weights",
   },
   {
-    src: beginnerAthlete,
-    alt: "Personal training session for beginners and athletes",
-    title: "All Levels Welcome",
+    src: cardioArea,
+    alt: "Cardio and functional training equipment at ALL FIT",
+    title: "Cardio Zone",
   },
   {
-    src: fitnessAssessment,
-    alt: "Fitness assessment and functional training",
-    title: "Functional Training",
+    src: powerRack,
+    alt: "Power rack and squat station at ALL FIT Gurugram",
+    title: "Power Rack",
   },
 ];
 

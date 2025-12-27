@@ -3,7 +3,7 @@ import Footer from "@/components/Footer";
 import { Users, Target, Eye, Dumbbell, Heart, Trophy, Clock } from "lucide-react";
 import InstagramReels from "@/components/InstagramReels";
 import GymGallery from "@/components/GymGallery";
-import gymInterior from "@/assets/gym-interior.jpg";
+import teamGroupPhoto from "@/assets/allfit-team-group-photo.jpg";
 
 const teamStats = [
   { icon: Users, value: "10+", label: "Expert Trainers" },
@@ -59,8 +59,8 @@ const About = () => {
             <div className="order-1 lg:order-2">
               <div className="rounded-3xl overflow-hidden">
                 <img 
-                  src={gymInterior} 
-                  alt="ALL FIT Gym Interior" 
+                  src={teamGroupPhoto} 
+                  alt="ALL FIT Team Group Photo - Expert Trainers in Gurugram" 
                   className="w-full h-[400px] object-cover"
                 />
               </div>
