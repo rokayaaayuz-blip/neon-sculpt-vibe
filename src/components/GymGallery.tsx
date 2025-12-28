@@ -40,13 +40,13 @@ const galleryImages = [
 
 const GymGallery = () => {
   return (
-    <section className="py-24 bg-card/30">
+    <section className="py-12 bg-card/30">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display uppercase mb-4">
+        <div className="text-center mb-10">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-display uppercase mb-3">
             Our <span className="accent-text-green">Gallery</span>
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+          <p className="text-muted-foreground text-base max-w-2xl mx-auto">
             Take a look inside ALL FIT – where fitness meets excellence
           </p>
         </div>
@@ -58,12 +58,13 @@ const GymGallery = () => {
               className="group relative overflow-hidden rounded-2xl glow-card animate-fade-up opacity-0"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="aspect-[4/3] overflow-hidden">
+              <div className="aspect-[4/3] overflow-hidden relative">
                 <img
                   src={image.src}
                   alt={image.alt}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/50 via-transparent to-transparent pointer-events-none" />
               </div>
               <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
                 <div className="p-6">

@@ -8,6 +8,7 @@ import CoachingCTA from "@/components/CoachingCTA";
 import Testimonials from "@/components/Testimonials";
 import InstagramReels from "@/components/InstagramReels";
 import Footer from "@/components/Footer";
+import GoogleMap from "@/components/GoogleMap";
 
 const Index = () => {
   return (
@@ -18,9 +19,10 @@ const Index = () => {
       <StorySection />
       <WhyChooseSection />
       <TrainingZones />
-      <CoachingCTA />
       <Testimonials />
+      <CoachingCTA />
       <InstagramReels />
+      <GoogleMap />
       <Footer />
     </div>
   );

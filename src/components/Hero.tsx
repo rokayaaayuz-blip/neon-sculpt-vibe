@@ -9,7 +9,7 @@ const Hero = () => {
     window.open(`https://wa.me/919667949344?text=${message}`, "_blank");
   };
   return <>
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-screen flex items-end md:items-center justify-center overflow-hidden pb-16 md:pb-0">
         {/* Background Image */}
         <div className="absolute inset-0 z-0" style={{
         backgroundImage: `url(${heroImage})`,
@@ -21,8 +21,8 @@ const Hero = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-background/90 via-transparent to-background/90" />
         </div>
 
-        {/* Content */}
-        <div className="relative z-10 container mx-auto px-4 text-center">
+        {/* Content - positioned at bottom on mobile, center on desktop */}
+        <div className="relative z-10 container mx-auto px-4 text-center mb-8 md:mb-0">
           <div className="max-w-4xl mx-auto">
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display uppercase leading-tight mb-4 animate-fade-up" style={{
             animationDelay: "0.1s"
@@ -53,10 +53,10 @@ const Hero = () => {
             <div className="flex flex-col sm:flex-row gap-3 justify-center animate-fade-up opacity-0" style={{
             animationDelay: "0.5s"
           }}>
-              <Button variant="cta" size="default" onClick={handleJoinNow}>
+              <Button variant="cta" size="lg" className="text-base px-8 py-3" onClick={handleJoinNow}>
                 Join Now
               </Button>
-              <Button variant="outline" size="default" onClick={() => setIsFormOpen(true)}>
+              <Button variant="outline" size="lg" className="text-base px-8 py-3" onClick={() => setIsFormOpen(true)}>
                 Book Free Trial
               </Button>
             </div>
