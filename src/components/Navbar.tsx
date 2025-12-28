@@ -173,42 +173,6 @@ const Navbar = () => {
         </motion.div>
       )}
 
-      {/* Mobile Bottom Navbar - Hidden on Contact page form */}
-      <div className="md:hidden fixed bottom-0 left-0 right-0 z-40 pb-4 px-4 mobile-bottom-nav">
-        <div className="flex items-center justify-around bg-background/80 border border-border backdrop-blur-lg py-2 px-2 rounded-full shadow-lg">
-          {navItems.map((item) => {
-            const Icon = item.icon;
-            const isActive = activeTab === item.name;
-
-            return (
-              <Link
-                key={item.name}
-                to={item.url}
-                onClick={() => setActiveTab(item.name)}
-                className={cn(
-                  "relative cursor-pointer p-3 rounded-full transition-colors",
-                  "text-foreground/60 hover:text-primary",
-                  isActive && "text-primary"
-                )}
-              >
-                <Icon size={20} strokeWidth={2.5} />
-                {isActive && (
-                  <motion.div
-                    layoutId="mobile-lamp"
-                    className="absolute inset-0 w-full bg-primary/10 rounded-full -z-10"
-                    initial={false}
-                    transition={{
-                      type: "spring",
-                      stiffness: 300,
-                      damping: 30,
-                    }}
-                  />
-                )}
-              </Link>
-            );
-          })}
-        </div>
-      </div>
     </>
   );
 };
