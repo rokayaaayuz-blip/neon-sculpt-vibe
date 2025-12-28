@@ -87,36 +87,37 @@ const Services = () => {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="pt-32 pb-16 bg-gradient-to-b from-card to-background">
+      <section className="pt-28 pb-10 bg-gradient-to-b from-card to-background">
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-display uppercase mb-6">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-display uppercase mb-4">
             Our <span className="accent-text-green">Services</span>
           </h1>
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
             Everything you need to achieve your fitness goals, all under one roof.
           </p>
         </div>
       </section>
 
       {/* Services Grid */}
-      <section className="py-24">
+      <section className="py-12">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
             {services.map((service, index) => (
               <div
                 key={index}
                 className="glow-card overflow-hidden hover-lift animate-fade-up opacity-0"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="aspect-[4/3] overflow-hidden">
+                <div className="aspect-[4/3] overflow-hidden relative">
                   <img
                     src={service.image}
                     alt={service.title}
                     className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
                   />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent pointer-events-none" />
                 </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-display uppercase mb-3 text-foreground">
+                <div className="p-4">
+                  <h3 className="text-lg font-display uppercase mb-2 text-foreground">
                     {service.title}
                   </h3>
                   <p className="text-muted-foreground text-sm leading-relaxed">
@@ -133,26 +134,26 @@ const Services = () => {
       <Testimonials />
 
       {/* CTA Section */}
-      <section className="py-24 bg-card/50">
+      <section className="py-12 bg-card/50">
         <div className="container mx-auto px-4">
-          <div className="glow-card p-8 md:p-12 lg:p-16 text-center relative overflow-hidden">
+          <div className="glow-card p-6 md:p-10 text-center relative overflow-hidden">
             <div className="absolute -top-20 -left-20 w-40 h-40 bg-primary/10 rounded-full blur-3xl" />
             <div className="absolute -bottom-20 -right-20 w-40 h-40 bg-accent/10 rounded-full blur-3xl" />
             
             <div className="relative z-10">
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-display uppercase mb-6">
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-display uppercase mb-4">
                 Ready to <span className="accent-text-purple">Get Started?</span>
               </h2>
               
-              <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10">
+              <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto mb-6">
                 Take the first step towards your fitness transformation today.
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <div className="flex flex-col sm:flex-row gap-3 justify-center">
                 <Button 
                   variant="cta" 
                   size="lg" 
-                  className="group"
+                  className="group px-8"
                   onClick={() => {
                     setFormType("assessment");
                     setIsFormOpen(true);
@@ -164,7 +165,7 @@ const Services = () => {
                 <Button 
                   variant="outline" 
                   size="lg" 
-                  className="group"
+                  className="group px-8"
                   onClick={handleTalkToTrainer}
                 >
                   Talk to a Trainer

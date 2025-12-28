@@ -54,10 +54,10 @@ const Navbar = () => {
 
   return (
     <>
-      {/* Logo - Fixed top left */}
+      {/* Logo - Fixed top left with fade on scroll */}
       <div className={cn(
-        "fixed top-4 left-4 z-50 transition-all duration-300",
-        isScrolled ? "opacity-100" : "opacity-100"
+        "fixed top-4 left-4 z-50 transition-all duration-500",
+        isScrolled ? "opacity-0 -translate-y-4 pointer-events-none" : "opacity-100 translate-y-0"
       )}>
         <Link to="/">
           <img alt="ALL FIT" className="h-14 w-auto" src={logo} />

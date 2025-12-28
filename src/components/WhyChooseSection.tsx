@@ -50,12 +50,13 @@ const WhyChooseSection = () => {
               className="glow-card overflow-hidden hover-lift animate-fade-up opacity-0"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="aspect-[4/3] overflow-hidden">
+              <div className="aspect-[4/3] overflow-hidden relative">
                 <img
                   src={feature.image}
                   alt={feature.text}
                   className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent pointer-events-none" />
               </div>
               <div className="p-5">
                 <span className="text-foreground font-medium">{feature.text}</span>
