@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Link, useLocation } from "react-router-dom";
 import { Home, Briefcase, Info, Mail, Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
-import logo from "@/assets/logo-transparent.png";
+import logo from "@/assets/logo-af.png";
 
 const navItems = [
   { name: "Home", url: "/", icon: Home },
