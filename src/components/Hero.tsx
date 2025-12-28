@@ -24,7 +24,7 @@ const Hero = () => {
         {/* Content */}
         <div className="relative z-10 container mx-auto px-4 text-center">
           <div className="max-w-4xl mx-auto">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display uppercase leading-tight mb-6 animate-fade-up" style={{
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display uppercase leading-tight mb-4 animate-fade-up" style={{
             animationDelay: "0.1s"
           }}>
               <span className="accent-text-green text-primary-foreground">Train Strong.</span>{" "}
@@ -32,31 +32,31 @@ const Hero = () => {
               <span className="accent-text-purple">Stay Consistent.</span>
             </h1>
             
-            <p className="text-xl md:text-2xl text-primary font-semibold mb-4 animate-fade-up opacity-0" style={{
+            <p className="text-base md:text-lg text-primary font-semibold mb-2 animate-fade-up opacity-0" style={{
             animationDelay: "0.2s"
           }}>
               Premium Fitness Gym in C Block
             </p>
 
-            <p className="text-muted-foreground text-lg mb-4 animate-fade-up opacity-0" style={{
+            <p className="text-muted-foreground text-sm md:text-base mb-2 animate-fade-up opacity-0" style={{
             animationDelay: "0.3s"
           }}>
               Cardio • Strength • Personal Training • Rehab • Physiotherapy
             </p>
 
-            <p className="text-lg md:text-xl text-foreground/90 max-w-2xl mx-auto mb-10 animate-fade-up opacity-0" style={{
+            <p className="text-sm md:text-base text-foreground/90 max-w-xl mx-auto mb-6 animate-fade-up opacity-0" style={{
             animationDelay: "0.4s"
           }}>
               ALL FIT is where fitness becomes a lifestyle.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-up opacity-0" style={{
+            <div className="flex flex-col sm:flex-row gap-3 justify-center animate-fade-up opacity-0" style={{
             animationDelay: "0.5s"
           }}>
-              <Button variant="cta" size="xl" onClick={handleJoinNow}>
+              <Button variant="cta" size="default" onClick={handleJoinNow}>
                 Join Now
               </Button>
-              <Button variant="outline" size="xl" onClick={() => setIsFormOpen(true)}>
+              <Button variant="outline" size="default" onClick={() => setIsFormOpen(true)}>
                 Book Free Trial
               </Button>
             </div>
