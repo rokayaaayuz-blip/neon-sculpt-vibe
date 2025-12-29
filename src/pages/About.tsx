@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Users, Target, Eye, Dumbbell, Heart, Trophy, Clock } from "lucide-react";
@@ -20,6 +21,14 @@ const culturePoints = [
 ];
 
 const About = () => {
+  useEffect(() => {
+    document.title = "About ALL FIT Gym | Trusted Fitness Gym in Sushant Lok Phase 1 Since 2021";
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute("content", "ALL FIT Gym has been helping people stay fit since 2021. With expert trainers and modern equipment, we deliver real fitness results in Sushant Lok Phase 1.");
+    }
+  }, []);
+
   return (
     <div className="min-h-screen bg-background overflow-x-hidden pb-16 md:pb-0">
       <Navbar />
