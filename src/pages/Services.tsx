@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -74,6 +74,14 @@ const services = [
 const Services = () => {
   const [isFormOpen, setIsFormOpen] = useState(false);
   const [formType, setFormType] = useState<"assessment" | "training">("assessment");
+
+  useEffect(() => {
+    document.title = "Gym Services in Block C Sushant Lok Phase 1 | Personal Training & Physio – ALL FIT";
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute("content", "ALL FIT offers cardio, strength training, personal training, custom diet & workout plans, rehab workouts and physiotherapy in Block C, Sushant Lok Phase 1.");
+    }
+  }, []);
 
   const handleTalkToTrainer = () => {
     const message = encodeURIComponent(

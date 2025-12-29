@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -12,20 +12,28 @@ import {
 import WhatsAppForm from "@/components/WhatsAppForm";
 import InstagramReels from "@/components/InstagramReels";
 
-import dumbbellRack from "@/assets/dumbbell-rack-weight-zone.jpg";
-import powerRack from "@/assets/power-rack-squat-zone.jpg";
-import strengthArea from "@/assets/gym-strength-training-area.jpg";
-import equipmentZone from "@/assets/gym-equipment-training-zone.jpg";
+import gymEquipmentArea from "@/assets/allfit-gym-equipment-training-area.webp";
+import fitnessWorkoutPlan from "@/assets/fitness-workout-plan-equipment.webp";
+import bodyMeasurement from "@/assets/body-measurement-fitness-results.webp";
+import personalTrainerSession from "@/assets/personal-trainer-coaching-session.webp";
 
 const benefits = [
-  { image: dumbbellRack, text: "Access to all equipment" },
-  { image: powerRack, text: "Expert trainer guidance" },
-  { image: strengthArea, text: "Custom workout plan" },
-  { image: equipmentZone, text: "Fitness assessment" },
+  { image: gymEquipmentArea, text: "Access to all equipment" },
+  { image: personalTrainerSession, text: "Expert trainer guidance" },
+  { image: fitnessWorkoutPlan, text: "Custom workout plan" },
+  { image: bodyMeasurement, text: "Fitness assessment" },
 ];
 
 const Contact = () => {
   const [isFormOpen, setIsFormOpen] = useState(false);
+
+  useEffect(() => {
+    document.title = "Join ALL FIT Gym in Block C Sushant Lok Phase 1 | Free Trial Available";
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute("content", "Looking for the best gym in Block C, Sushant Lok Phase 1? Visit ALL FIT Gym, meet expert trainers and start your fitness journey with a free trial session.");
+    }
+  }, []);
 
   const handleJoinNow = () => {
     const message = encodeURIComponent(
