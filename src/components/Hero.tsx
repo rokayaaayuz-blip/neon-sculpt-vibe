@@ -35,7 +35,7 @@ const Hero = () => {
             <p className="text-base md:text-lg text-primary font-semibold mb-2 animate-fade-up opacity-0" style={{
             animationDelay: "0.2s"
           }}>
-              Premium Fitness Gym in Sushant Lok Phase 1
+              Premium Fitness Gym in Sushant Lok Phase I
             </p>
 
             <p className="text-muted-foreground text-sm md:text-base mb-2 animate-fade-up opacity-0" style={{
