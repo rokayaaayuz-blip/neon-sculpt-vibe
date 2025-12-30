@@ -5,11 +5,13 @@ interface PageTransitionProps {
   children: ReactNode;
 }
 
-const PageTransition = ({ children }: PageTransitionProps) => {
+import { useEffect } from "react";
 
-  // 🔥 FORCE SCROLL TO TOP ON PAGE CHANGE
+const PageTransition = ({ children }: { children: React.ReactNode }) => {
+
   useEffect(() => {
-    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+    // Scroll to top when component mounts
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
 
   return (
