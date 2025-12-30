@@ -27,12 +27,12 @@ const CoachingCTA = () => {
                 <Users className="w-8 h-8" />
               </div>
               
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-display uppercase mb-6">
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-display uppercase mb-6">
                 Expert Coaching That{" "}
                 <span className="accent-text-green">Delivers Results</span>
               </h2>
               
-              <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10">
+              <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto mb-10">
                 Our trainers guide, motivate, and push you — safely and effectively.
               </p>
 

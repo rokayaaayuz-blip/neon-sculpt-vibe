@@ -36,10 +36,10 @@ const Testimonials = () => {
     <section className="py-24 bg-card/30">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display uppercase mb-4">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-display uppercase mb-4">
             What Our <span className="accent-text-green">Members</span> Say
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+          <p className="text-muted-foreground text-base md:text-lg max-w-2xl mx-auto">
             Real stories from real people who transformed their lives at ALL FIT.
           </p>
         </div>

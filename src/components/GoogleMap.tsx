@@ -3,10 +3,10 @@ const GoogleMap = () => {
     <section className="py-16 bg-card/30">
       <div className="container mx-auto px-4">
         <div className="text-center mb-10">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display uppercase mb-4">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-display uppercase mb-4">
             Find <span className="accent-text-green">Us</span>
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+          <p className="text-muted-foreground text-base md:text-lg max-w-2xl mx-auto">
             Visit ALL FIT at C Block, Sushant Lok Phase 1, Gurugram
           </p>
         </div>

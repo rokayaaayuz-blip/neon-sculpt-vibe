@@ -103,6 +103,9 @@ const Contact = () => {
       {/* Google Map Section */}
       <section className="py-12">
         <div className="container mx-auto px-4">
+          <h2 className="text-2xl md:text-3xl font-display uppercase text-center mb-8">
+            Our <span className="accent-text-purple">Location</span>
+          </h2>
           <div className="glow-card overflow-hidden">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3507.5559387661747!2d77.07008631507883!3d28.45055738248825!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d18f3db40fb61%3A0xc8aa41b9b31ebf75!2sSushant%20Lok%20Phase%20I%2C%20Sector%2043%2C%20Gurugram%2C%20Haryana%20122009!5e0!3m2!1sen!2sin!4v1703590000000!5m2!1sen!2sin"
@@ -122,10 +125,13 @@ const Contact = () => {
       {/* Contact Info & CTAs */}
       <section className="py-24 bg-card/30">
         <div className="container mx-auto px-4">
+          <h2 className="text-2xl md:text-3xl font-display uppercase text-center mb-10">
+            Get in <span className="accent-text-green">Touch</span>
+          </h2>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* Contact Info Card */}
             <div className="glow-card p-8 md:p-10">
-              <h3 className="text-2xl md:text-3xl font-display uppercase mb-8 accent-text-green">
+              <h3 className="text-xl md:text-2xl font-display uppercase mb-8 accent-text-green">
                 Visit Us
               </h3>
               <div className="space-y-6">
@@ -188,7 +194,7 @@ const Contact = () => {
               <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-accent/10 rounded-full blur-3xl" />
               
               <div className="relative z-10">
-                <h3 className="text-2xl md:text-3xl font-display uppercase mb-4">
+                <h3 className="text-xl md:text-2xl font-display uppercase mb-4">
                   Ready to <span className="accent-text-purple">Transform?</span>
                 </h3>
                 <p className="text-muted-foreground text-lg mb-8">

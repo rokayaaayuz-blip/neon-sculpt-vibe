@@ -16,11 +16,11 @@ const InstagramReels = () => {
         <div className="text-center mb-12">
           <div className="flex items-center justify-center gap-3 mb-4">
             <Instagram className="w-8 h-8 text-primary" />
-            <h2 className="text-3xl md:text-4xl font-display uppercase">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-display uppercase">
               Follow Us on <span className="accent-text-purple">Instagram</span>
             </h2>
           </div>
-          <p className="text-muted-foreground text-lg">
+          <p className="text-muted-foreground text-base md:text-lg">
             @allfit_c_block
           </p>
         </div>
