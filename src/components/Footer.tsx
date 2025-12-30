@@ -42,7 +42,7 @@ const Footer = () => {
               <img alt="ALL FIT" src={logo} className="h-14 w-auto" />
             </Link>
             <p className="text-muted-foreground text-sm">
-              Premium fitness gym in C Block. Train Strong. Live Fit. Stay Consistent.
+              Premium fitness gym in Block C, 2935, Sushant Lok Phase I. Train Strong. Live Fit. Stay Consistent.
             </p>
           </div>
 
