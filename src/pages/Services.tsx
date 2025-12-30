@@ -106,12 +106,15 @@ const Services = () => {
         </div>
       </section>
 
-      {/* Services Grid */}
+{/* Services Grid */}
       <section className="py-12">
         <div className="container mx-auto px-4">
+          <h2 className="text-2xl md:text-3xl font-display uppercase text-center mb-8">
+            What We <span className="accent-text-green">Offer</span>
+          </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
             {services.map((service, index) => (
-              <div
+              <article
                 key={index}
                 className="glow-card overflow-hidden hover-lift animate-fade-up opacity-0"
                 style={{ animationDelay: `${index * 0.1}s` }}
@@ -132,7 +135,7 @@ const Services = () => {
                     {service.description}
                   </p>
                 </div>
-              </div>
+              </article>
             ))}
           </div>
         </div>

@@ -26,7 +26,7 @@ const TrainingZones = () => {
     <section className="py-24 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-display uppercase mb-4">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-display uppercase mb-4">
             Training <span className="accent-text-green">Zones</span>
           </h2>
         </div>
@@ -49,11 +49,11 @@ const TrainingZones = () => {
               <div className="absolute bottom-0 left-0 right-0 p-8">
                 <div className="flex items-center gap-3 mb-4">
                   <span className="text-3xl">{zone.emoji}</span>
-                  <h3 className={`text-3xl font-display uppercase ${zone.accentColor === 'primary' ? 'accent-text-green' : 'accent-text-purple'}`}>
+                  <h3 className={`text-2xl md:text-3xl font-display uppercase ${zone.accentColor === 'primary' ? 'accent-text-green' : 'accent-text-purple'}`}>
                     {zone.title}
                   </h3>
                 </div>
-                <p className="text-muted-foreground text-lg max-w-md">
+                <p className="text-muted-foreground text-base md:text-lg max-w-md">
                   {zone.description}
                 </p>
               </div>
