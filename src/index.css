@@ -15,8 +15,8 @@
     --popover: 0 0% 7.1%;
     --popover-foreground: 0 0% 100%;
 
-    /* Green accent */
-    --primary: 142 70% 45%;
+    /* Green accent - darkened for contrast */
+    --primary: 142 70% 35%;
     --primary-foreground: 0 0% 100%;
 
     --secondary: 0 0% 12%;
@@ -25,12 +25,12 @@
     --muted: 0 0% 15%;
     --muted-foreground: 0 0% 63%;
 
-    /* Purple accent */
-    --accent: 270 70% 55%;
-    --accent-foreground: 0 0% 100%;
+    /* Purple accent - lightened for contrast */
+    --accent: 270 70% 70%;
+    --accent-foreground: 0 0% 0%;
 
-    /* Orange CTA */
-    --cta: 25 95% 53%;
+    /* Orange CTA - darkened for contrast */
+    --cta: 25 95% 40%;
     --cta-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
