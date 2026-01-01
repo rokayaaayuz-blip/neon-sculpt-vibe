@@ -1,9 +1,9 @@
 import featureCardio from "@/assets/feature-cardio.jpg";
-import certifiedTrainer from "@/assets/certified-personal-trainer-gym-session.jpg";
+import certifiedTrainer from "@/assets/certified-personal-trainer-gym-session.webp";
 import featureDiet from "@/assets/feature-diet.jpg";
 import featureRehab from "@/assets/feature-rehab.jpg";
-import cleanGym from "@/assets/clean-modern-gym-environment.jpg";
-import beginnerAthlete from "@/assets/beginners-to-athletes-training.jpg";
+import cleanGym from "@/assets/clean-modern-gym-environment.webp";
+import beginnerAthlete from "@/assets/beginners-to-athletes-training.webp";
 
 const features = [
   {

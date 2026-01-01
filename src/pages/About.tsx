@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 import { Users, Target, Eye, Dumbbell, Heart, Trophy, Clock } from "lucide-react";
 import InstagramReels from "@/components/InstagramReels";
 import GymGallery from "@/components/GymGallery";
-import teamGroupPhoto from "@/assets/allfit-team-group-photo.jpg";
+import teamGroupPhoto from "@/assets/allfit-team-group-photo.webp";
 
 const teamStats = [
   { icon: Users, value: "10+", label: "Expert Trainers" },

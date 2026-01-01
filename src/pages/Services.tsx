@@ -8,15 +8,15 @@ import InstagramReels from "@/components/InstagramReels";
 import Testimonials from "@/components/Testimonials";
 
 import featureCardio from "@/assets/feature-cardio.jpg";
-import strengthTraining from "@/assets/strength-training-barbell-workout.jpg";
-import certifiedTrainer from "@/assets/certified-personal-trainer-gym-session.jpg";
+import strengthTraining from "@/assets/strength-training-barbell-workout.webp";
+import certifiedTrainer from "@/assets/certified-personal-trainer-gym-session.webp";
 import featureRehab from "@/assets/feature-rehab.jpg";
 import featureDiet from "@/assets/feature-diet.jpg";
 import workoutProgramming from "@/assets/custom-workout-programming-plan.jpg";
 import fitnessAssessment from "@/assets/fitness-assessment-athlete.jpg";
-import bodyTransform from "@/assets/body-transformation-results.jpg";
-import cleanGym from "@/assets/clean-modern-gym-environment.jpg";
-import beginnerAthlete from "@/assets/beginners-to-athletes-training.jpg";
+import bodyTransform from "@/assets/body-transformation-results.webp";
+import cleanGym from "@/assets/clean-modern-gym-environment.webp";
+import beginnerAthlete from "@/assets/beginners-to-athletes-training.webp";
 
 const services = [
   {

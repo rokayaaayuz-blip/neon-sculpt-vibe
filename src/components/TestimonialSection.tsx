@@ -1,5 +1,5 @@
 import { Quote } from "lucide-react";
-import testimonialImg from "@/assets/testimonial.jpg";
+import testimonialImg from "@/assets/testimonial.webp";
 
 const TestimonialSection = () => {
   return (
