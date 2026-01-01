@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import heroImage from "@/assets/hero-athlete.jpg";
+import heroImage from "@/assets/hero-athlete.webp";
 import WhatsAppForm from "./WhatsAppForm";
 const Hero = () => {
   const [isFormOpen, setIsFormOpen] = useState(false);

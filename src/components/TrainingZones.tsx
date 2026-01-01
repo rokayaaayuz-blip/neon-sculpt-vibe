@@ -1,6 +1,6 @@
 import { Heart, Dumbbell } from "lucide-react";
-import workout1 from "@/assets/workout-1.jpg";
-import workout2 from "@/assets/workout-2.jpg";
+import workout1 from "@/assets/workout-1.webp";
+import workout2 from "@/assets/workout-2.webp";
 
 const zones = [
   {
