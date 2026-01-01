@@ -1,5 +1,5 @@
-import workout1 from "@/assets/workout-1.jpg";
-import workout2 from "@/assets/workout-2.jpg";
+import workout1 from "@/assets/workout-1.webp";
+import workout2 from "@/assets/workout-2.webp";
 import workout3 from "@/assets/workout-3.jpg";
 import workout4 from "@/assets/workout-4.jpg";
 
