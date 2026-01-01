@@ -48,7 +48,7 @@ const Footer = () => {
 
           {/* Navigation Links */}
           <div>
-            <h4 className="font-display uppercase text-lg mb-4 accent-text-green">Quick Links</h4>
+            <p className="font-display uppercase text-lg mb-4 accent-text-green" role="heading" aria-level={2}>Quick Links</p>
             <div className="flex flex-col gap-2">
               {footerLinks.map((link) => (
                 <Link
@@ -64,7 +64,7 @@ const Footer = () => {
 
           {/* Contact Info */}
           <div>
-            <h4 className="font-display uppercase text-lg mb-4 accent-text-purple">Contact</h4>
+            <p className="font-display uppercase text-lg mb-4 accent-text-purple" role="heading" aria-level={2}>Contact</p>
             <div className="flex flex-col gap-3">
               <button
                 onClick={handlePhone}
@@ -92,7 +92,7 @@ const Footer = () => {
 
           {/* Social Links */}
           <div>
-            <h4 className="font-display uppercase text-lg mb-4 accent-text-green">Follow Us</h4>
+            <p className="font-display uppercase text-lg mb-4 accent-text-green" role="heading" aria-level={2}>Follow Us</p>
             <div className="flex gap-4">
               <a
                 href="https://www.instagram.com/allfit_c_block/"
