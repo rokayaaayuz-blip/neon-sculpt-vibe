@@ -162,3 +162,102 @@
     text-wrap: balance;
   }
 }
+
+/* Preloader Animation - From Uiverse.io by lesimpleliott */
+.loader__balls {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.loader__balls__group {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+  height: 100px;
+  width: 40px;
+}
+
+.ball {
+  height: 30px;
+  width: 30px;
+  border-radius: 15px;
+  position: absolute;
+  transform-origin: bottom;
+}
+
+/* Ball 1 - Green (Primary) */
+.loader__balls__group :nth-child(1) {
+  background-color: hsl(142 65% 42%);
+  animation: jumpinBallAnimation1 1000ms infinite;
+}
+
+/* Ball 2 - Orange (CTA) */
+.loader__balls__group :nth-child(2) {
+  background-color: hsl(25 95% 50%);
+  animation: jumpinBallAnimation2 1000ms infinite;
+}
+
+/* Ball 3 - Purple (Accent) */
+.loader__balls__group :nth-child(3) {
+  background-color: hsl(270 70% 70%);
+  animation: jumpinBallAnimation3 1000ms infinite;
+}
+
+.loader__balls__group .item1 {
+  animation-delay: 0ms;
+}
+
+.loader__balls__group .item2 {
+  animation-delay: 100ms;
+}
+
+.loader__balls__group .item3 {
+  animation-delay: 200ms;
+}
+
+@keyframes jumpinBallAnimation1 {
+  0% { transform: translateY(0) scale(1, 1); }
+  10% { transform: translateY(0) scale(1.3, 0.8); }
+  11% { transform: translateY(0) scale(0.7, 1.2); animation-timing-function: cubic-bezier(0, 0, 0.5, 1); }
+  39% { transform: translateY(-75px) scale(1); animation-timing-function: cubic-bezier(0, 0, 0.5, 1); }
+  40% { transform: translateY(-75px) scale(1); }
+  41% { transform: translateY(-75px) scale(1); animation-timing-function: cubic-bezier(1, 0, 1, 0); }
+  69% { transform: translateY(0px) scale(1, 1); animation-timing-function: cubic-bezier(1, 0, 1, 0); }
+  70% { transform: translateY(0) scale(1.5, 0.4); }
+  80% { transform: translateY(0) scale(0.8, 1.2); }
+  90% { transform: translateY(0) scale(1.1, 0.8); }
+  100% { transform: translateY(0) scale(1, 1); }
+}
+
+@keyframes jumpinBallAnimation2 {
+  0% { transform: translateY(0) scale(1, 1); }
+  10% { transform: translateY(0) scale(1.3, 0.8); }
+  11% { transform: translateY(0) scale(0.7, 1.2); animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1); }
+  39% { transform: translateY(-75px) scale(1); animation-timing-function: cubic-bezier(0, 0.5, 0.5, 1); }
+  40% { transform: translateY(-75px) scale(1); }
+  41% { transform: translateY(-75px) scale(1); animation-timing-function: cubic-bezier(1, 0, 1, 0.5); }
+  69% { transform: translateY(0px) scale(1, 1); animation-timing-function: cubic-bezier(1, 0, 1, 0.5); }
+  70% { transform: translateY(0) scale(1.5, 0.4); }
+  80% { transform: translateY(0) scale(0.8, 1.2); }
+  90% { transform: translateY(0) scale(1.1, 0.8); }
+  100% { transform: translateY(0) scale(1, 1); }
+}
+
+@keyframes jumpinBallAnimation3 {
+  0% { transform: translateY(0) scale(1, 1); }
+  10% { transform: translateY(0) scale(1.3, 0.8); }
+  11% { transform: translateY(0) scale(0.7, 1.2); animation-timing-function: cubic-bezier(0, 1, 0.5, 1); }
+  39% { transform: translateY(-75px) scale(1); animation-timing-function: cubic-bezier(0, 1, 0.5, 1); }
+  40% { transform: translateY(-75px) scale(1); }
+  41% { transform: translateY(-75px) scale(1); animation-timing-function: cubic-bezier(1, 0, 1, 1); }
+  69% { transform: translateY(0px) scale(1, 1); animation-timing-function: cubic-bezier(1, 0, 1, 1); }
+  70% { transform: translateY(0) scale(1.5, 0.4); }
+  80% { transform: translateY(0) scale(0.8, 1.2); }
+  90% { transform: translateY(0) scale(1.1, 0.8); }
+  100% { transform: translateY(0) scale(1, 1); }
+}
