@@ -4,7 +4,7 @@ const instagramReels = [
   { id: 1, thumbnail: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=300&h=400&fit=crop" },
   { id: 2, thumbnail: "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=300&h=400&fit=crop" },
   { id: 3, thumbnail: "https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=300&h=400&fit=crop" },
-  { id: 4, thumbnail: "https://images.unsplash.com/photo-1581009146145-b5ef050c149a?w=300&h=400&fit=crop" },
+  { id: 4, thumbnail: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=300&h=400&fit=crop" },
   { id: 5, thumbnail: "https://images.unsplash.com/photo-1574680096145-d05b474e2155?w=300&h=400&fit=crop" },
   { id: 6, thumbnail: "https://images.unsplash.com/photo-1549060279-7e168fcee0c2?w=300&h=400&fit=crop" },
 ];
