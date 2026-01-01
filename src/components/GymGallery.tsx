@@ -2,8 +2,8 @@ import gymReception from "@/assets/gym-reception-interior.jpg";
 import equipmentZone from "@/assets/gym-equipment-training-zone.jpg";
 import strengthArea from "@/assets/gym-strength-training-area.jpg";
 import dumbbellRack from "@/assets/dumbbell-rack-weight-zone.jpg";
-import cardioArea from "@/assets/gym-cardio-functional-area.jpg";
-import powerRack from "@/assets/power-rack-squat-zone.jpg";
+import cardioArea from "@/assets/gym-cardio-functional-area.webp";
+import powerRack from "@/assets/power-rack-squat-zone.webp";
 
 const galleryImages = [
   {
