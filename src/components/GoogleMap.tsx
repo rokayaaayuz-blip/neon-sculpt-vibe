@@ -30,7 +30,7 @@ const GoogleMap = () => {
             href="https://www.google.com/maps/dir/?api=1&destination=Sushant+Lok+Phase+1+Gurugram"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-full font-semibold hover:bg-primary/90 transition-colors"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-[hsl(142_76%_30%)] text-white rounded-full font-semibold hover:bg-[hsl(142_76%_25%)] transition-colors"
           >
             Get Directions
           </a>
