@@ -21,11 +21,11 @@ const Index = () => {
       <TrustStrip />
       <Suspense fallback={<div className="min-h-[200px]" />}>
         <StorySection />
+        <InstagramReels />
         <WhyChooseSection />
         <TrainingZones />
         <Testimonials />
         <CoachingCTA />
-        <InstagramReels />
         <GoogleMap />
         <Footer />
       </Suspense>
