@@ -7,10 +7,7 @@ import {
 import { Button } from "@/components/ui/button";
 
 const instagramReels = [
-  { id: 1,
-    title: "(Cardio)",
-    embedUrl: "https://www.instagram.com/reel/DSaZ-7jjZ8c/embed",
-    thumbnail: "https://www.instagram.com/pinak_448/p/DSoeNu-EnXC/," },
+  { id: 1, thumbnail: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=300&h=400&fit=crop", title: "Strength Training" },
   { id: 2, thumbnail: "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=300&h=400&fit=crop", title: "Personal Training" },
   { id: 3, thumbnail: "https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=300&h=400&fit=crop", title: "Cardio Workout" },
   { id: 4, thumbnail: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=300&h=400&fit=crop", title: "Weight Training" },
@@ -93,22 +90,39 @@ const InstagramReels = () => {
       </div>
 
       {/* Reel Preview Dialog */}
-<Dialog open={!!selectedReel} onOpenChange={() => setSelectedReel(null)}>
-  <DialogContent className="max-w-sm p-0 overflow-hidden bg-card border-border">
-    {selectedReel && (
-      <div className="relative w-full aspect-[9/16]">
-        <iframe
-          src={selectedReel.embedUrl}
-          className="absolute inset-0 w-full h-full"
-          frameBorder="0"
-          scrolling="no"
-          allow="autoplay; encrypted-media"
-          allowFullScreen
-        />
-      </div>
-    )}
-  </DialogContent>
-</Dialog>
+      <Dialog open={!!selectedReel} onOpenChange={() => setSelectedReel(null)}>
+        <DialogContent className="max-w-sm p-0 overflow-hidden bg-card border-border">
+          {selectedReel && (
+            <div className="flex flex-col">
+              <div className="relative aspect-[9/16] w-full">
+                <img
+                  src={selectedReel.thumbnail}
+                  alt={`ALL FIT Instagram Reel - ${selectedReel.title}`}
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="w-16 h-16 rounded-full bg-primary/90 flex items-center justify-center">
+                    <Play className="w-7 h-7 text-primary-foreground ml-1" />
+                  </div>
+                </div>
+                <div className="absolute top-4 left-4 flex items-center gap-2">
+                  <Instagram className="w-6 h-6 text-foreground" />
+                  <span className="text-foreground font-semibold text-lg">{selectedReel.title}</span>
+                </div>
+              </div>
+              <div className="p-4">
+                <Button 
+                  onClick={handleOpenInstagram}
+                  className="w-full bg-gradient-to-r from-purple-500 via-pink-500 to-orange-500 hover:from-purple-600 hover:via-pink-600 hover:to-orange-600 text-white font-semibold"
+                >
+                  <Instagram className="w-5 h-5 mr-2" />
+                  Open in Instagram
+                </Button>
+              </div>
+            </div>
+          )}
+        </DialogContent>
+      </Dialog>
     </section>
   );
 };
