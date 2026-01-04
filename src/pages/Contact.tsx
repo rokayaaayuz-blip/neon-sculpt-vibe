@@ -11,6 +11,13 @@ import {
 } from "lucide-react";
 import WhatsAppForm from "@/components/WhatsAppForm";
 import InstagramReels from "@/components/InstagramReels";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+} from "@/components/ui/dialog";
 
 import gymEquipmentArea from "@/assets/allfit-gym-equipment-training-area.webp";
 import fitnessWorkoutPlan from "@/assets/fitness-workout-plan-equipment.webp";
@@ -18,14 +25,35 @@ import bodyMeasurement from "@/assets/body-measurement-fitness-results.webp";
 import personalTrainerSession from "@/assets/personal-trainer-coaching-session.webp";
 
 const benefits = [
-  { image: gymEquipmentArea, text: "Access to all equipment" },
-  { image: personalTrainerSession, text: "Expert trainer guidance" },
-  { image: fitnessWorkoutPlan, text: "Custom workout plan" },
-  { image: bodyMeasurement, text: "Fitness assessment" },
+  { 
+    image: gymEquipmentArea, 
+    text: "Access to all equipment",
+    title: "Full Equipment Access",
+    description: "Get unlimited access to all our modern equipment including cardio machines, free weights, cable systems, power racks, and functional training gear. Everything you need for a complete workout is available under one roof."
+  },
+  { 
+    image: personalTrainerSession, 
+    text: "Expert trainer guidance",
+    title: "Expert Trainer Guidance",
+    description: "Our certified personal and general trainers are always available to guide you. They focus on proper form, safe workouts, and motivation, making sure members of all ages feel confident while training."
+  },
+  { 
+    image: fitnessWorkoutPlan, 
+    text: "Custom workout plan",
+    title: "Custom Workout Plan",
+    description: "We design custom workout routines based on your age, body type, and fitness goals. Whether you want to lose weight, gain strength, or stay healthy, our personalized plans help you achieve results step by step."
+  },
+  { 
+    image: bodyMeasurement, 
+    text: "Fitness assessment",
+    title: "Comprehensive Fitness Assessment",
+    description: "Start your journey with a complete body composition analysis and fitness testing. Regular assessments help track your progress and allow us to adjust your program for optimal results."
+  },
 ];
 
 const Contact = () => {
   const [isFormOpen, setIsFormOpen] = useState(false);
+  const [selectedBenefit, setSelectedBenefit] = useState<(typeof benefits)[0] | null>(null);
 
   useEffect(() => {
     document.title = "Join ALL FIT Gym in Block C Sushant Lok Phase 1 | Free Trial Available";
@@ -79,10 +107,12 @@ const Contact = () => {
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
             {benefits.map((benefit, index) => (
-              <div
+              <button
                 key={index}
-                className="glow-card overflow-hidden hover-lift animate-fade-up opacity-0"
+                onClick={() => setSelectedBenefit(benefit)}
+                className="glow-card overflow-hidden hover-lift animate-fade-up opacity-0 cursor-pointer"
                 style={{ animationDelay: `${index * 0.1}s` }}
+                aria-label={`Learn more about ${benefit.text}`}
               >
                 <div className="aspect-square overflow-hidden">
                   <img
@@ -94,11 +124,36 @@ const Contact = () => {
                 <div className="p-5 text-center">
                   <span className="text-foreground font-medium">{benefit.text}</span>
                 </div>
-              </div>
+              </button>
             ))}
           </div>
         </div>
       </section>
+
+      {/* Benefit Detail Dialog */}
+      <Dialog open={!!selectedBenefit} onOpenChange={() => setSelectedBenefit(null)}>
+        <DialogContent className="sm:max-w-2xl">
+          {selectedBenefit && (
+            <>
+              <div className="aspect-video overflow-hidden rounded-lg mb-4">
+                <img
+                  src={selectedBenefit.image}
+                  alt={selectedBenefit.title}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <DialogHeader>
+                <DialogTitle className="text-xl md:text-2xl font-display uppercase tracking-wide">
+                  {selectedBenefit.title}
+                </DialogTitle>
+                <DialogDescription className="text-base text-foreground/80 leading-relaxed pt-3">
+                  {selectedBenefit.description}
+                </DialogDescription>
+              </DialogHeader>
+            </>
+          )}
+        </DialogContent>
+      </Dialog>
 
       {/* Google Map Section */}
       <section className="py-12">

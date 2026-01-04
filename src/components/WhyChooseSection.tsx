@@ -118,10 +118,10 @@ const WhyChooseSection = () => {
                 />
               </div>
               <DialogHeader>
-                <DialogTitle className="text-xl md:text-2xl font-display uppercase">
+                <DialogTitle className="text-xl md:text-2xl font-display uppercase tracking-wide">
                   {selectedFeature.title}
                 </DialogTitle>
-                <DialogDescription className="text-base text-foreground/80 leading-relaxed pt-2">
+                <DialogDescription className="text-base text-foreground/80 leading-relaxed pt-3">
                   {selectedFeature.description}
                 </DialogDescription>
               </DialogHeader>
