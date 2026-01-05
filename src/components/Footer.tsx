@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Instagram, Phone, Mail, MapPin } from "lucide-react";
-import logo from "@/assets/logo-allfit-transparent.png";
+import logo from "@/assets/logo-allfit.svg";
 
 const footerLinks = [
   { label: "Home", href: "/" },
@@ -39,7 +39,7 @@ const Footer = () => {
           {/* Logo & About */}
           <div className="lg:col-span-1">
             <Link to="/" className="flex items-center gap-3 mb-4">
-              <img alt="ALL FIT" src={logo} className="h-14 w-auto mix-blend-screen" />
+              <img alt="ALL FIT" src={logo} className="h-14 w-auto" />
             </Link>
             <p className="text-muted-foreground text-sm">
               Premium fitness gym in Block C, 2935, Sushant Lok Phase I. Train Strong. Live Fit. Stay Consistent.
