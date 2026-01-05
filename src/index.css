@@ -117,6 +117,21 @@
     text-shadow: 0 0 20px hsl(300 100% 56% / 0.5);
   }
 
+  /* Split gradient fade for headings */
+  h1, h2, h3, h4,
+  .heading-gradient {
+    background: linear-gradient(
+      90deg,
+      hsl(var(--foreground)) 0%,
+      hsl(var(--foreground)) 35%,
+      hsl(300 100% 56%) 65%,
+      hsl(300 100% 56%) 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
   .hover-lift {
     @apply transition-all duration-300 ease-out;
   }
