@@ -29,13 +29,13 @@ const ElfsightInstagramFeed = () => {
         width: 100% !important;
       }
     `;
-    document.head.appendChild(style); // <-- THIS WAS MISSING AND IS REQUIRED
+    document.head.appendChild(style); 
 
     return () => {
       const existingStyle = document.getElementById("elfsight-custom-styles");
       if (existingStyle) existingStyle.remove();
     };
-  }, []); // <-- FIXED: Added the missing closing brackets
+  }, []); 
 
   return (
     <div className="w-full flex justify-center overflow-hidden">
