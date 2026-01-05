@@ -5,8 +5,8 @@ const InstagramReels = () => {
   return (
     <section className="py-24 bg-card/30 w-full overflow-hidden">
       {/* Locked to 1024px to match the widget and provide consistency across pages */}
-      <div className="max-w-[1024px] mx-auto px-4 w-full">
-        <div className="text-center mb-12">
+          <div className="max-w-[1024px] mx-auto px-4 w-full">        
+          <div className="text-center mb-12">
           <div className="flex items-center justify-center gap-3 mb-4">
             <Instagram className="w-8 h-8 text-primary" />
             <h2 className="text-2xl md:text-3xl lg:text-4xl font-display uppercase">
