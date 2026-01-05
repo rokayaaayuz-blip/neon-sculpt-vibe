@@ -127,17 +127,9 @@
       hsl(300 100% 56%) 60%,
       hsl(300 100% 56%) 100%
     );
-    background-size: 200% 100%;
-    background-position: 0% 50%;
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    transition: background-position 0.4s ease;
-  }
-
-  h1:hover, h2:hover, h3:hover, h4:hover,
-  .heading-gradient:hover {
-    background-position: 100% 50%;
   }
 
   .hover-lift {
