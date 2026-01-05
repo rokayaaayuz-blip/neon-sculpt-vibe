@@ -8,7 +8,7 @@ useEffect(() => {
     script.async = true;
     document.body.appendChild(script);
 
-    // FIX: Only declare 'style' ONCE
+    // FIX: Declare variable only ONCE
     const style = document.createElement("style");
     style.id = "elfsight-custom-styles";
     style.textContent = `
