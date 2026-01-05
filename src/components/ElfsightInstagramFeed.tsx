@@ -15,18 +15,22 @@ const ElfsightInstagramFeed = () => {
     // Add custom styles to hide branding and FORCE 1024px width
     const style = document.createElement("style");
     style.id = "elfsight-custom-styles";
-    v
+    style.textContent = `
+      /* Hide Elfsight branding */
+      .eapps-link, a[href*="elfsight.com"] { display: none !important; }
+      
+      /* FORCE 1024px (4xl/5xl area) */
+      .elfsight-app-902afde0-b118-4d96-a531-b93fcde4abb5 {
+        width: 100% !important;
+        max-width: 1024px !important; 
+        margin: 0 auto !important;
+        display: block !important;
+      }
+      
+      .elfsight-app-902afde0-b118-4d96-a531-b93fcde4abb5 > div {
+        width: 100% !important;
+      }
     `;
-    
-    if (!document.getElementById("elfsight-custom-styles")) {
-      document.head.appendChild(style);
-    }
-
-    return () => {
-      const existingStyle = document.getElementById("elfsight-custom-styles");
-      if (existingStyle) { existingStyle.remove(); }
-    };
-  }, []);
 
   return (
     <div className="w-full flex justify-center overflow-hidden">
