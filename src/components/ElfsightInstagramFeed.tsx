@@ -12,13 +12,14 @@ const ElfsightInstagramFeed = () => {
     script.async = true;
     document.body.appendChild(script);
 
-    // 2. Create AND APPEND the style tag (This part was missing/broken)
+    // 2. Create AND APPEND the style tag to the head
     const style = document.createElement("style");
     style.id = "elfsight-custom-styles";
     style.textContent = `
+      /* Hide Elfsight branding */
       .eapps-link, a[href*="elfsight.com"] { display: none !important; }
       
-      /* FORCE 1024px (4xl/5xl area) globally */
+      /* FORCE 1024px width across all pages */
       .elfsight-app-902afde0-b118-4d96-a531-b93fcde4abb5 {
         width: 100% !important;
         max-width: 1024px !important; 
@@ -30,13 +31,14 @@ const ElfsightInstagramFeed = () => {
         width: 100% !important;
       }
     `;
-    document.head.appendChild(style);
+    document.head.appendChild(style); // This attaches the style to your site
 
+    // Cleanup when component unmounts
     return () => {
       const existingStyle = document.getElementById("elfsight-custom-styles");
       if (existingStyle) existingStyle.remove();
     };
-  }, []); // <--- This bracket was missing, causing the crash
+  }, []); // <--- This closing was missing in your file
 
   return (
     <div className="w-full flex justify-center overflow-hidden">
