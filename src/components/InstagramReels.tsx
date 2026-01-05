@@ -33,8 +33,7 @@ const InstagramReels = () => {
             View More on Instagram
           </a>
         </div>
-      </div> 
-      {/* ^ This closing div was missing/misplaced in your file */}
+      </div> {/* This was the missing closing div */}
     </section>
   );
 };
