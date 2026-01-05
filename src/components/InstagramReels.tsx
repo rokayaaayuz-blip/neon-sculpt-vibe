@@ -3,8 +3,8 @@ import ElfsightInstagramFeed from "./ElfsightInstagramFeed";
 
 const InstagramReels = () => {
   return (
-    <section className="py-24 bg-card/30 w-full overflow-hidden">
-      {/* We removed the 'container' class and used max-w-5xl (1024px) to ensure 4xl width */}
+    // 'w-screen' and 'left-1/2' trick forces the section to ignore narrow parents
+    <section className="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen py-24 bg-card/30 overflow-hidden">
       <div className="max-w-[1024px] mx-auto px-4">
         <div className="text-center mb-12">
           <div className="flex items-center justify-center gap-3 mb-4">
@@ -18,7 +18,6 @@ const InstagramReels = () => {
           </p>
         </div>
         
-        {/* This will now be able to fill the 1024px space */}
         <div className="w-full">
           <ElfsightInstagramFeed />
         </div>
