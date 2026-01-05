@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Instagram, Phone, Mail, MapPin } from "lucide-react";
-import logo from "@/assets/logo-af.png";
+import logo from "@/assets/logo-allfit.svg";
 
 const footerLinks = [
   { label: "Home", href: "/" },
