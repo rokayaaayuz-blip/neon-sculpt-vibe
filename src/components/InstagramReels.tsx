@@ -3,9 +3,9 @@ import ElfsightInstagramFeed from "./ElfsightInstagramFeed";
 
 const InstagramReels = () => {
   return (
-    <section className="py-16 md:py-24 bg-card/30 w-full overflow-hidden">
-      {/* STRUCTURE FIXED: Exactly one wrapper for the content */}
-      <div className="max-w-[1024px] mx-auto px-4 w-full">        
+    <section className="py-24 bg-card/30 w-full overflow-hidden">
+      {/* Structural Fix: One wrapper locked to 1024px for consistency */}
+      <div className="max-w-[1024px] mx-auto px-4 w-full">
         <div className="text-center mb-12">
           <div className="flex items-center justify-center gap-3 mb-4">
             <Instagram className="w-8 h-8 text-primary" />
@@ -18,7 +18,7 @@ const InstagramReels = () => {
           </p>
         </div>
         
-        <div className="w-full flex justify-center">
+        <div className="w-full">
           <ElfsightInstagramFeed />
         </div>
         
@@ -33,7 +33,7 @@ const InstagramReels = () => {
             View More on Instagram
           </a>
         </div>
-      </div> {/* This was the missing closing div */}
+      </div> 
     </section>
   );
 };
