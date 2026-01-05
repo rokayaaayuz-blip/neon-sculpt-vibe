@@ -117,14 +117,14 @@
     text-shadow: 0 0 20px hsl(300 100% 56% / 0.5);
   }
 
-  /* Split gradient fade for headings */
+  /* Split gradient fade for headings - 40% white | 20% transition | 40% magenta */
   h1, h2, h3, h4,
   .heading-gradient {
     background: linear-gradient(
       90deg,
       hsl(var(--foreground)) 0%,
-      hsl(var(--foreground)) 35%,
-      hsl(300 100% 56%) 65%,
+      hsl(var(--foreground)) 40%,
+      hsl(300 100% 56%) 60%,
       hsl(300 100% 56%) 100%
     );
     -webkit-background-clip: text;
