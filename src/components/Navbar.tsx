@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Link, useLocation } from "react-router-dom";
 import { Home, Briefcase, Info, Mail, Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
-import logo from "@/assets/logo-allfit.svg";
+import logo from "@/assets/logo-allfit-new.png";
 
 const navItems = [
   { name: "Home", url: "/", icon: Home },
@@ -68,7 +68,7 @@ const Navbar = () => {
         isScrolled ? "opacity-0 -translate-y-4 pointer-events-none" : "opacity-100 translate-y-0"
       )}>
         <Link to="/">
-          <img alt="ALL FIT" className="h-14 w-auto" src={logo} />
+          <img alt="ALL FIT" className="h-14 w-auto mix-blend-screen" src={logo} />
         </Link>
       </div>
 
