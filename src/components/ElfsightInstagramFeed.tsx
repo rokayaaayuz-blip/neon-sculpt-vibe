@@ -62,15 +62,14 @@ const ElfsightInstagramFeed = () => {
       
       /* Make widget responsive */
       .elfsight-app-902afde0-b118-4d96-a531-b93fcde4abb5 {
-        width: 100% !important;
-        max-width: 896px !important; 
-        margin-left: auto !important;
-        margin-right: auto !important;
+        width: 100% !important;
+        max-width: 1024px !important; /* Changed from 896 to 1024 */
+        margin: 0 auto !important;
         display: block !important;
-      }
-      
-      .elfsight-app-902afde0-b118-4d96-a531-b93fcde4abb5 > div {
-        width: 100% !important;
+      }
+      
+      .elfsight-app-902afde0-b118-4d96-a531-b93fcde4abb5 > div {
+        width: 100% !important;
       }
     `;
     
@@ -90,7 +89,7 @@ const ElfsightInstagramFeed = () => {
   return (
     <div className="w-full flex justify-center overflow-hidden">
       <div 
-        className="elfsight-app-902afde0-b118-4d96-a531-b93fcde4abb5 w-full" 
+        className="elfsight-app-902afde0-b118-4d96-a531-b93fcde4abb5 max-w-5xl w-full" 
         data-elfsight-app-lazy 
       />
     </div>
