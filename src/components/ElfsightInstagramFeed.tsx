@@ -63,7 +63,7 @@ const ElfsightInstagramFeed = () => {
       /* Make widget responsive */
       .elfsight-app-902afde0-b118-4d96-a531-b93fcde4abb5 {
         width: 100% !important;
-        max-width: 1024px !important; /* Changed from 896 to 1024 */
+        max-width: 1024px !important; 
         margin: 0 auto !important;
         display: block !important;
       }
