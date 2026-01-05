@@ -234,11 +234,7 @@ const Services = () => {
       </section>
 
       {/* Instagram Reels */}
-<section className="w-full flex justify-center py-12 overflow-hidden">
-  <div className="w-full max-w-5xl px-4"> 
-    <InstagramReels />
-  </div>
-</section>
+<InstagramReels />
 
       <Footer />
       
