@@ -34,6 +34,32 @@ const ElfsightInstagramFeed = () => {
         overflow: hidden !important;
       }
       
+      /* Hide profile header section (avatar, name, posts, followers, following, follow button) */
+      .elfsight-app-902afde0-b118-4d96-a531-b93fcde4abb5 [class*="eapps-instagram-feed-header"],
+      .elfsight-app-902afde0-b118-4d96-a531-b93fcde4abb5 [class*="Header"],
+      .elfsight-app-902afde0-b118-4d96-a531-b93fcde4abb5 [class*="header"],
+      .elfsight-app-902afde0-b118-4d96-a531-b93fcde4abb5 [class*="profile"],
+      .elfsight-app-902afde0-b118-4d96-a531-b93fcde4abb5 [class*="Profile"],
+      .elfsight-app-902afde0-b118-4d96-a531-b93fcde4abb5 [class*="follow"],
+      .elfsight-app-902afde0-b118-4d96-a531-b93fcde4abb5 [class*="Follow"],
+      .elfsight-app-902afde0-b118-4d96-a531-b93fcde4abb5 [class*="stats"],
+      .elfsight-app-902afde0-b118-4d96-a531-b93fcde4abb5 [class*="Stats"],
+      .elfsight-app-902afde0-b118-4d96-a531-b93fcde4abb5 [class*="counter"],
+      .elfsight-app-902afde0-b118-4d96-a531-b93fcde4abb5 [class*="Counter"],
+      .elfsight-app-902afde0-b118-4d96-a531-b93fcde4abb5 [class*="avatar"],
+      .elfsight-app-902afde0-b118-4d96-a531-b93fcde4abb5 [class*="Avatar"],
+      .elfsight-app-902afde0-b118-4d96-a531-b93fcde4abb5 [class*="username"],
+      .elfsight-app-902afde0-b118-4d96-a531-b93fcde4abb5 [class*="Username"] {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        height: 0 !important;
+        max-height: 0 !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        overflow: hidden !important;
+      }
+      
       /* Make widget responsive */
       .elfsight-app-902afde0-b118-4d96-a531-b93fcde4abb5 {
         width: 100% !important;
