@@ -4,7 +4,7 @@ import ElfsightInstagramFeed from "./ElfsightInstagramFeed";
 const InstagramReels = () => {
   return (
     <section className="py-24 bg-card/30 w-full overflow-hidden">
-      {/* We removed 'container' and added a fixed 1024px max-width */}
+      {/* Changed 'container' to 'max-w-[1024px]' to ensure 4xl width everywhere */}
       <div className="max-w-[1024px] mx-auto px-4 w-full">
         <div className="text-center mb-12">
           <div className="flex items-center justify-center gap-3 mb-4">
@@ -18,7 +18,6 @@ const InstagramReels = () => {
           </p>
         </div>
         
-        {/* The feed will now fill the 1024px space properly */}
         <div className="w-full">
           <ElfsightInstagramFeed />
         </div>
