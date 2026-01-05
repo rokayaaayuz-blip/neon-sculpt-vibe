@@ -4,7 +4,7 @@ import ElfsightInstagramFeed from "./ElfsightInstagramFeed";
 const InstagramReels = () => {
   return (
     <section className="py-24 bg-card/30 w-full overflow-hidden">
-      {/* Changed 'container' to 'max-w-[1024px]' to ensure 4xl width everywhere */}
+      {/* Remove 'container' and use a fixed max-width to match Home page */}
       <div className="max-w-[1024px] mx-auto px-4 w-full">
         <div className="text-center mb-12">
           <div className="flex items-center justify-center gap-3 mb-4">
