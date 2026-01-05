@@ -13,8 +13,12 @@ const ElfsightInstagramFeed = () => {
 
     const style = document.createElement("style");
     style.id = "elfsight-custom-styles";
+    // REPLACE everything from 'const style' down to the 'return () =>' cleanup
+    const style = document.createElement("style");
+    style.id = "elfsight-custom-styles";
     style.textContent = `
       .eapps-link, a[href*="elfsight.com"] { display: none !important; }
+      
       .elfsight-app-902afde0-b118-4d96-a531-b93fcde4abb5 {
         width: 100% !important;
         max-width: 1024px !important; 
@@ -22,6 +26,7 @@ const ElfsightInstagramFeed = () => {
         display: block !important;
       }
     `;
+    document.head.appendChild(style); // This line is CRITICAL to make it work
     document.head.appendChild(style); // Injection
 
     return () => {
