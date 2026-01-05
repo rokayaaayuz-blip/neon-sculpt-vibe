@@ -26,8 +26,8 @@
     --muted: 0 0% 15%;
     --muted-foreground: 0 0% 63%;
 
-    /* 10% - Purple as secondary accent */
-    --accent: 270 70% 55%;
+    /* 10% - Magenta as secondary accent (same as primary) */
+    --accent: 300 100% 56%;
     --accent-foreground: 0 0% 100%;
 
     /* CTA uses the magenta color */
@@ -45,7 +45,7 @@
 
     /* Custom tokens - updated to magenta/purple */
     --glow-magenta: 0 0 30px hsl(300 100% 56% / 0.4);
-    --glow-purple: 0 0 30px hsl(270 70% 55% / 0.4);
+    --glow-purple: 0 0 30px hsl(300 100% 56% / 0.4);
     --glass-bg: hsl(0 0% 100% / 0.05);
     --glass-border: hsl(0 0% 100% / 0.1);
   }
@@ -87,7 +87,7 @@
     background: linear-gradient(
       135deg, 
       hsl(300 100% 56% / 0.3) 0%, 
-      hsl(270 70% 55% / 0.2) 100%
+      hsl(300 100% 56% / 0.2) 100%
     );
     -webkit-mask: 
       linear-gradient(#fff 0 0) content-box, 
@@ -104,7 +104,7 @@
   }
 
   .glow-card:hover {
-    box-shadow: 0 0 30px hsl(300 100% 56% / 0.2), 0 0 20px hsl(270 70% 55% / 0.2);
+    box-shadow: 0 0 30px hsl(300 100% 56% / 0.2), 0 0 20px hsl(300 100% 56% / 0.2);
   }
 
   .accent-text-green {
@@ -114,7 +114,7 @@
 
   .accent-text-purple {
     @apply text-accent;
-    text-shadow: 0 0 20px hsl(270 70% 55% / 0.5);
+    text-shadow: 0 0 20px hsl(300 100% 56% / 0.5);
   }
 
   .hover-lift {
@@ -127,7 +127,7 @@
   }
 
   .gradient-green-purple {
-    background: linear-gradient(135deg, hsl(300 100% 56%) 0%, hsl(270 70% 55%) 100%);
+    background: linear-gradient(135deg, hsl(300 100% 56%) 0%, hsl(300 100% 56%) 100%);
   }
 
   .gradient-dark {
@@ -150,7 +150,7 @@
     ),
     radial-gradient(
       ellipse at bottom right,
-      hsl(270 70% 55% / 0.08) 0%,
+      hsl(300 100% 56% / 0.08) 0%,
       transparent 50%
     );
   }
@@ -203,7 +203,7 @@
 
 /* Ball 3 - Purple (Accent) */
 .loader__balls__group :nth-child(3) {
-  background-color: hsl(270 70% 55%);
+  background-color: hsl(300 100% 56%);
   animation: jumpinBallAnimation3 1000ms infinite;
 }
 
