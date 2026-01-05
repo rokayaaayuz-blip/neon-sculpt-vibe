@@ -85,7 +85,7 @@ const ElfsightInstagramFeed = () => {
   }, []);
 
   return (
-    <div className="w-full overflow-hidden">
+    <div className="max-w-4xl mx-auto px-4 overflow-hidden">
       <div 
         className="elfsight-app-902afde0-b118-4d96-a531-b93fcde4abb5 w-full" 
         data-elfsight-app-lazy 
