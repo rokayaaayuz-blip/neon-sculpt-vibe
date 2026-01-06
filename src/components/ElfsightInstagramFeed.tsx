@@ -19,10 +19,10 @@ const ElfsightInstagramFeed = () => {
       /* Hide Elfsight branding */
       .eapps-link, a[href*="elfsight.com"] { display: none !important; }
       
-      /* FORCE 1024px width globally */
+      /* FORCE 4xl (896px) width on desktop */
       .elfsight-app-902afde0-b118-4d96-a531-b93fcde4abb5 {
         width: 100% !important;
-        max-width: 1024px !important; 
+        max-width: 56rem !important; 
         margin: 0 auto !important;
         display: block !important;
       }

@@ -13,8 +13,51 @@ import {
   DialogTitle,
   DialogDescription,
 } from "@/components/ui/dialog";
+import serviceHiit from "@/assets/service-hiit.webp";
+import allfitGymEquipmentTrainingArea from "@/assets/allfit-gym-equipment-training-area.webp";
+import certifiedPersonalTrainerGymSession from "@/assets/certified-personal-trainer-gym-session.webp";
+import fitnessAssessmentAthlete from "@/assets/fitness-assessment-athlete.jpg";
+import featureRehab from "@/assets/feature-rehab.jpg";
+import beginnersToAthletesTraining from "@/assets/beginners-to-athletes-training.webp";
 
-// ... (keep all your image imports and services array exactly as they are) ...
+const services = [
+  {
+    title: "Cardio & Strength Training",
+    description: "Our facility is equipped with the latest cardio machines and professional-grade strength training equipment to help you achieve your goals.",
+    image: allfitGymEquipmentTrainingArea,
+    formType: "training" as const
+  },
+  {
+    title: "Personal Training",
+    description: "Get personalized guidance from our certified trainers who will create a workout plan tailored specifically to your body and goals.",
+    image: certifiedPersonalTrainerGymSession,
+    formType: "training" as const
+  },
+  {
+    title: "HIIT & Functional Fitness",
+    description: "High-Intensity Interval Training and functional movements to boost your metabolism and improve everyday physical performance.",
+    image: serviceHiit,
+    formType: "training" as const
+  },
+  {
+    title: "Rehab & Physiotherapy",
+    description: "Specialized support for injury recovery and body pain management, helping you move safely and effectively.",
+    image: featureRehab,
+    formType: "assessment" as const
+  },
+  {
+    title: "Fitness Assessments",
+    description: "Regular body composition analysis and fitness testing to track your progress and adjust your program for optimal results.",
+    image: fitnessAssessmentAthlete,
+    formType: "assessment" as const
+  },
+  {
+    title: "Programs for All Levels",
+    description: "From beginners to professional athletes, we offer training environments and programs that suit every level of experience.",
+    image: beginnersToAthletesTraining,
+    formType: "training" as const
+  }
+];
 
 const Services = () => {
   const [isFormOpen, setIsFormOpen] = useState(false);
