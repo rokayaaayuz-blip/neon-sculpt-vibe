@@ -19,16 +19,25 @@ const ElfsightInstagramFeed = () => {
       /* Hide Elfsight branding */
       .eapps-link, a[href*="elfsight.com"] { display: none !important; }
       
-      /* FORCE 4xl (896px) width on desktop */
-      .elfsight-app-902afde0-b118-4d96-a531-b93fcde4abb5 {
-        width: 100% !important;
-        max-width: 56rem !important; 
-        margin: 0 auto !important;
-        display: block !important;
+      /* FORCE 4xl (896px) fixed width on desktop */
+      @media (min-width: 1024px) {
+        .elfsight-app-902afde0-b118-4d96-a531-b93fcde4abb5,
+        .elfsight-app-902afde0-b118-4d96-a531-b93fcde4abb5 > div,
+        .elfsight-app-902afde0-b118-4d96-a531-b93fcde4abb5 * {
+          width: 56rem !important;
+          min-width: 56rem !important;
+          max-width: 56rem !important;
+          margin-left: auto !important;
+          margin-right: auto !important;
+        }
       }
       
-      .elfsight-app-902afde0-b118-4d96-a531-b93fcde4abb5 > div {
-        width: 100% !important;
+      /* Mobile: full width */
+      @media (max-width: 1023px) {
+        .elfsight-app-902afde0-b118-4d96-a531-b93fcde4abb5 {
+          width: 100% !important;
+          max-width: 100% !important;
+        }
       }
     `;
     document.head.appendChild(style);
