@@ -18,7 +18,10 @@ export default {
         display: ["Bebas Neue", "system-ui", "sans-serif"],
       },
       colors: {
-        border: "hsl(var(--border))",
+        border: {
+          DEFAULT: "hsl(var(--border))",
+          hover: "hsl(var(--border-hover))",
+        },
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
@@ -26,6 +29,8 @@ export default {
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
+          hover: "hsl(var(--primary-hover))",
+          soft: "hsl(var(--primary-soft) / 0.1)",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
@@ -42,6 +47,7 @@ export default {
         accent: {
           DEFAULT: "hsl(var(--accent))",
           foreground: "hsl(var(--accent-foreground))",
+          cyan: "hsl(var(--accent-cyan))",
         },
         cta: {
           DEFAULT: "hsl(var(--cta))",
@@ -54,6 +60,19 @@ export default {
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
+        },
+        surface: {
+          DEFAULT: "hsl(var(--card))",
+          hover: "hsl(var(--surface-hover))",
+        },
+        divider: "hsl(var(--divider))",
+        overlay: "hsl(var(--overlay) / 0.5)",
+        success: "hsl(var(--success))",
+        warning: "hsl(var(--warning))",
+        info: "hsl(var(--info))",
+        text: {
+          muted: "hsl(var(--text-muted))",
+          disabled: "hsl(var(--text-disabled))",
         },
       },
       borderRadius: {
