@@ -6,48 +6,99 @@
 
 @layer base {
   :root {
-    /* 60% - White/Light base */
-    --background: 0 0% 4.3%;
+    /* ========== BACKGROUNDS ========== */
+    /* Main Background #0B0B0F */
+    --background: 240 24% 4%;
+    /* Primary Text #FFFFFF */
     --foreground: 0 0% 100%;
 
-    --card: 0 0% 7.1%;
+    /* Surface #12121A - Cards, modals */
+    --card: 240 19% 8%;
     --card-foreground: 0 0% 100%;
 
-    --popover: 0 0% 7.1%;
+    /* Surface for popovers */
+    --popover: 240 19% 8%;
     --popover-foreground: 0 0% 100%;
 
-    /* 30% - Magenta/Pink (#FF21FF) as primary accent */
+    /* ========== BRAND CORE ========== */
+    /* Primary #FF21FF - CTAs, highlights, key headings */
     --primary: 300 100% 56%;
     --primary-foreground: 0 0% 100%;
+    /* Primary Hover #E01FE0 */
+    --primary-hover: 300 78% 50%;
+    /* Primary Soft #FF21FF1A (10% opacity for badges, glows) */
+    --primary-soft: 300 100% 56%;
 
-    --secondary: 0 0% 12%;
+    /* ========== SECONDARY COLORS ========== */
+    /* Secondary Purple #7C3AED - Gradients, sub-headings */
+    --secondary: 263 84% 58%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 0 0% 15%;
-    --muted-foreground: 0 0% 63%;
+    /* ========== MUTED & UTILITY ========== */
+    /* Muted Background #161625 */
+    --muted: 240 24% 12%;
+    /* Secondary Text #C7C7D1 - Paragraphs */
+    --muted-foreground: 240 6% 80%;
 
-    /* 10% - Magenta as secondary accent (same as primary) */
-    --accent: 300 100% 56%;
+    /* ========== ACCENT COLORS ========== */
+    /* Secondary Indigo #6366F1 - Links, icons */
+    --accent: 239 84% 67%;
     --accent-foreground: 0 0% 100%;
+    /* Accent Cyan #22D3EE - Tech highlights, info states */
+    --accent-cyan: 189 94% 53%;
 
-    /* CTA uses the magenta color */
+    /* CTA uses primary magenta */
     --cta: 300 100% 56%;
     --cta-foreground: 0 0% 100%;
 
-    --destructive: 0 84.2% 60.2%;
+    /* ========== STATUS COLORS ========== */
+    /* Success #22C55E */
+    --success: 142 71% 45%;
+    /* Warning #FACC15 */
+    --warning: 48 96% 53%;
+    /* Error #EF4444 */
+    --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
+    /* Info #38BDF8 */
+    --info: 199 89% 60%;
 
-    --border: 0 0% 20%;
-    --input: 0 0% 15%;
+    /* ========== BORDERS & DIVIDERS ========== */
+    /* Border Default #24243A */
+    --border: 240 24% 18%;
+    /* Border Hover #353553 */
+    --border-hover: 240 22% 27%;
+    /* Divider #1A1A2E */
+    --divider: 240 27% 14%;
+
+    /* ========== INPUT & RING ========== */
+    /* Input uses muted background */
+    --input: 240 24% 12%;
     --ring: 300 100% 56%;
 
     --radius: 1.125rem;
 
-    /* Custom tokens - updated to magenta/purple */
+    /* ========== TEXT COLORS ========== */
+    /* Muted Text #8B8BA7 - Captions, labels */
+    --text-muted: 240 12% 60%;
+    /* Disabled Text #5A5A72 */
+    --text-disabled: 240 12% 40%;
+
+    /* ========== SURFACE STATES ========== */
+    /* Surface Hover #181825 */
+    --surface-hover: 240 21% 12%;
+    /* Overlay #00000080 (50% black) */
+    --overlay: 0 0% 0%;
+
+    /* ========== CUSTOM TOKENS ========== */
+    /* Glow #FF21FF66 (40% opacity) */
     --glow-magenta: 0 0 30px hsl(300 100% 56% / 0.4);
-    --glow-purple: 0 0 30px hsl(300 100% 56% / 0.4);
+    --glow-purple: 0 0 30px hsl(263 84% 58% / 0.4);
     --glass-bg: hsl(0 0% 100% / 0.05);
     --glass-border: hsl(0 0% 100% / 0.1);
+
+    /* ========== SIGNATURE GRADIENT ========== */
+    /* linear-gradient(90deg, #FF21FF 0%, #B026FF 50%, #7C3AED 100%) */
+    --gradient-primary: linear-gradient(90deg, hsl(300 100% 56%) 0%, hsl(283 100% 58%) 50%, hsl(263 84% 58%) 100%);
   }
 }
 
@@ -117,9 +168,22 @@
     text-shadow: 0 0 20px hsl(300 100% 56% / 0.5);
   }
 
-  /* Split gradient fade for headings - 40% white | 20% transition | 40% magenta */
+  /* Signature gradient for headings - Primary Gradient */
   h1, h2, h3, h4,
   .heading-gradient {
+    background: linear-gradient(
+      90deg,
+      hsl(300 100% 56%) 0%,
+      hsl(283 100% 58%) 50%,
+      hsl(263 84% 58%) 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* Alternative: Split gradient (white to magenta) */
+  .heading-gradient-split {
     background: linear-gradient(
       90deg,
       hsl(var(--foreground)) 0%,
@@ -141,8 +205,13 @@
     box-shadow: 0 20px 40px hsl(0 0% 0% / 0.5);
   }
 
+  /* Primary signature gradient */
+  .gradient-primary {
+    background: linear-gradient(90deg, hsl(300 100% 56%) 0%, hsl(283 100% 58%) 50%, hsl(263 84% 58%) 100%);
+  }
+
   .gradient-green-purple {
-    background: linear-gradient(135deg, hsl(300 100% 56%) 0%, hsl(300 100% 56%) 100%);
+    background: linear-gradient(135deg, hsl(300 100% 56%) 0%, hsl(263 84% 58%) 100%);
   }
 
   .gradient-dark {
