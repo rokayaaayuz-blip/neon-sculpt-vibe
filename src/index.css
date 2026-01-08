@@ -160,12 +160,10 @@
 
   .accent-text-green {
     @apply text-primary;
-    text-shadow: 0 0 20px hsl(300 100% 56% / 0.5);
   }
 
   .accent-text-purple {
     @apply text-accent;
-    text-shadow: 0 0 20px hsl(300 100% 56% / 0.5);
   }
 
   /* Signature gradient for headings - Primary Gradient */
