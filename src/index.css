@@ -97,8 +97,8 @@
     --glass-border: hsl(0 0% 100% / 0.1);
 
     /* ========== SIGNATURE GRADIENT ========== */
-    /* linear-gradient(90deg, #FFFFFF 0%, #FFFFFF 45%, #FF21FF 75%) */
-    --gradient-primary: linear-gradient(90deg, #FFFFFF 0%, #FFFFFF 45%, #FF21FF 75%);
+    /* linear-gradient(90deg, #FFFFFF 0%, #FFFFFF 40%, #FF21FF 60%, #FF21FF 100%) */
+    --gradient-primary: linear-gradient(90deg, #FFFFFF 0%, #FFFFFF 40%, #FF21FF 60%, #FF21FF 100%);
   }
 }
 
@@ -171,7 +171,7 @@
   /* Signature gradient for headings - Primary Gradient */
   h1, h2, h3, h4,
   .heading-gradient {
-    background: linear-gradient(90deg, #FFFFFF 0%, #FFFFFF 45%, #FF21FF 75%);
+    background: linear-gradient(90deg, #FFFFFF 0%, #FFFFFF 40%, #FF21FF 60%, #FF21FF 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -179,7 +179,7 @@
 
   /* Alternative: Split gradient (white to magenta) */
   .heading-gradient-split {
-    background: linear-gradient(90deg, #FFFFFF 0%, #FFFFFF 45%, #FF21FF 75%);
+    background: linear-gradient(90deg, #FFFFFF 0%, #FFFFFF 40%, #FF21FF 60%, #FF21FF 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -196,7 +196,7 @@
 
   /* Primary signature gradient */
   .gradient-primary {
-    background: linear-gradient(90deg, #FFFFFF 0%, #FFFFFF 45%, #FF21FF 75%);
+    background: linear-gradient(90deg, #FFFFFF 0%, #FFFFFF 40%, #FF21FF 60%, #FF21FF 100%);
   }
 
   .gradient-green-purple {
