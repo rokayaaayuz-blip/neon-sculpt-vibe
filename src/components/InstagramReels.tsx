@@ -2,14 +2,6 @@ import { useState, useRef } from "react";
 import { Instagram, Play, X, ExternalLink } from "lucide-react";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 
-// Import reel videos
-import reelYoga from "@/assets/reels/reel-yoga.mp4";
-import reelTransformation from "@/assets/reels/reel-transformation.mp4";
-import reelAbhay from "@/assets/reels/reel-abhay.mp4";
-import reelBackDay from "@/assets/reels/reel-back-day.mp4";
-import reelBuilt from "@/assets/reels/reel-built.mp4";
-import reelDance from "@/assets/reels/reel-dance.mp4";
-
 interface Reel {
   id: number;
   video: string;
@@ -20,41 +12,42 @@ interface Reel {
 const reels: Reel[] = [
   {
     id: 1,
-    video: reelYoga,
+    video: "/reels/reel-yoga.mp4",
     title: "Yoga Session",
     instagramUrl: "https://www.instagram.com/allfit_c_block/",
   },
   {
     id: 2,
-    video: reelTransformation,
+    video: "/reels/reel-transformation.mp4",
     title: "Transformation Sessions",
     instagramUrl: "https://www.instagram.com/allfit_c_block/",
   },
   {
     id: 3,
-    video: reelAbhay,
+    video: "/reels/reel-abhay.mp4",
     title: "Abhay's Journey",
     instagramUrl: "https://www.instagram.com/allfit_c_block/",
   },
   {
     id: 4,
-    video: reelBackDay,
+    video: "/reels/reel-back-day.mp4",
     title: "Back Day Workout",
     instagramUrl: "https://www.instagram.com/allfit_c_block/",
   },
   {
     id: 5,
-    video: reelBuilt,
+    video: "/reels/reel-built.mp4",
     title: "Built Brick by Brick",
     instagramUrl: "https://www.instagram.com/allfit_c_block/",
   },
   {
     id: 6,
-    video: reelDance,
+    video: "/reels/reel-dance.mp4",
     title: "Dance & Rhythm",
     instagramUrl: "https://www.instagram.com/allfit_c_block/",
   },
 ];
+
 
 const InstagramReels = () => {
   const [selectedReel, setSelectedReel] = useState<Reel | null>(null);
