@@ -12,37 +12,19 @@ interface Reel {
 const reels: Reel[] = [
   {
     id: 1,
-    video: "/reels/reel-yoga.mp4",
-    title: "Yoga Session",
-    instagramUrl: "https://www.instagram.com/allfit_c_block/",
-  },
-  {
-    id: 2,
-    video: "/reels/reel-transformation.mp4",
-    title: "Transformation Sessions",
-    instagramUrl: "https://www.instagram.com/allfit_c_block/",
-  },
-  {
-    id: 3,
-    video: "/reels/reel-abhay.mp4",
+    video: "/src/assets/reels/reel-abhay.mp4",
     title: "Abhay's Journey",
     instagramUrl: "https://www.instagram.com/allfit_c_block/",
   },
   {
-    id: 4,
-    video: "/reels/reel-back-day.mp4",
+    id: 2,
+    video: "/src/assets/reels/reel-back-day.mp4",
     title: "Back Day Workout",
     instagramUrl: "https://www.instagram.com/allfit_c_block/",
   },
   {
-    id: 5,
-    video: "/reels/reel-built.mp4",
-    title: "Built Brick by Brick",
-    instagramUrl: "https://www.instagram.com/allfit_c_block/",
-  },
-  {
-    id: 6,
-    video: "/reels/reel-dance.mp4",
+    id: 3,
+    video: "/src/assets/reels/reel-dance.mp4",
     title: "Dance & Rhythm",
     instagramUrl: "https://www.instagram.com/allfit_c_block/",
   },
