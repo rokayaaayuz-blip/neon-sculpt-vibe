@@ -28,6 +28,24 @@ const reels: Reel[] = [
     title: "Dance & Rhythm",
     instagramUrl: "https://www.instagram.com/allfit_c_block/",
   },
+  {
+    id: 4,
+    video: "/src/assets/reels/reel-yoga.mp4",
+    title: "Yoga Session",
+    instagramUrl: "https://www.instagram.com/allfit_c_block/",
+  },
+  {
+    id: 5,
+    video: "/src/assets/reels/reel-transformation.mp4",
+    title: "Transformation Sessions",
+    instagramUrl: "https://www.instagram.com/allfit_c_block/",
+  },
+  {
+    id: 6,
+    video: "/src/assets/reels/reel-built.mp4",
+    title: "Built Brick by Brick",
+    instagramUrl: "https://www.instagram.com/allfit_c_block/",
+  },
 ];
 
 
@@ -70,13 +88,13 @@ const InstagramReels = () => {
               onClick={() => handleReelClick(reel)}
               className="relative aspect-[9/16] rounded-2xl overflow-hidden cursor-pointer group bg-card border border-border/50 hover:border-primary/50 transition-all duration-300"
             >
-              {/* Video Thumbnail */}
+              {/* Video Thumbnail with lazy loading */}
               <video
                 src={reel.video}
                 className="w-full h-full object-cover"
                 muted
                 playsInline
-                preload="metadata"
+                preload="none"
               />
 
               {/* Overlay */}
