@@ -2,6 +2,14 @@ import { useState, useRef } from "react";
 import { Instagram, Play, X, ExternalLink } from "lucide-react";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 
+// Import videos as ES6 modules
+import reelAbhay from "@/assets/reels/reel-abhay.mp4";
+import reelBackDay from "@/assets/reels/reel-back-day.mp4";
+import reelDance from "@/assets/reels/reel-dance.mp4";
+import reelYoga from "@/assets/reels/reel-yoga.mp4";
+import reelTransformation from "@/assets/reels/reel-transformation.mp4";
+import reelBuilt from "@/assets/reels/reel-built.mp4";
+
 interface Reel {
   id: number;
   video: string;
@@ -12,37 +20,37 @@ interface Reel {
 const reels: Reel[] = [
   {
     id: 1,
-    video: "/src/assets/reels/reel-abhay.mp4",
+    video: reelAbhay,
     title: "Abhay's Journey",
     instagramUrl: "https://www.instagram.com/allfit_c_block/",
   },
   {
     id: 2,
-    video: "/src/assets/reels/reel-back-day.mp4",
+    video: reelBackDay,
     title: "Back Day Workout",
     instagramUrl: "https://www.instagram.com/allfit_c_block/",
   },
   {
     id: 3,
-    video: "/src/assets/reels/reel-dance.mp4",
+    video: reelDance,
     title: "Dance & Rhythm",
     instagramUrl: "https://www.instagram.com/allfit_c_block/",
   },
   {
     id: 4,
-    video: "/src/assets/reels/reel-yoga.mp4",
+    video: reelYoga,
     title: "Yoga Session",
     instagramUrl: "https://www.instagram.com/allfit_c_block/",
   },
   {
     id: 5,
-    video: "/src/assets/reels/reel-transformation.mp4",
+    video: reelTransformation,
     title: "Transformation Sessions",
     instagramUrl: "https://www.instagram.com/allfit_c_block/",
   },
   {
     id: 6,
-    video: "/src/assets/reels/reel-built.mp4",
+    video: reelBuilt,
     title: "Built Brick by Brick",
     instagramUrl: "https://www.instagram.com/allfit_c_block/",
   },
@@ -88,13 +96,13 @@ const InstagramReels = () => {
               onClick={() => handleReelClick(reel)}
               className="relative aspect-[9/16] rounded-2xl overflow-hidden cursor-pointer group bg-card border border-border/50 hover:border-primary/50 transition-all duration-300"
             >
-              {/* Video Thumbnail with lazy loading */}
+              {/* Video Thumbnail - first frame as poster */}
               <video
                 src={reel.video}
                 className="w-full h-full object-cover"
                 muted
                 playsInline
-                preload="none"
+                preload="metadata"
               />
 
               {/* Overlay */}
