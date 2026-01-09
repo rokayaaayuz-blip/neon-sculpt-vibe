@@ -41,6 +41,7 @@ const TrainingZones = () => {
               <img
                 src={zone.image}
                 alt={zone.title}
+                loading="lazy"
                 className="w-full h-[400px] object-cover transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent" />
