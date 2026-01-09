@@ -6,6 +6,9 @@ import { Dialog, DialogContent } from "@/components/ui/dialog";
 import reelAbhay from "@/assets/reels/reel-abhay.mp4";
 import reelBackDay from "@/assets/reels/reel-back-day.mp4";
 import reelDance from "@/assets/reels/reel-dance.mp4";
+import reelYoga from "@/assets/reels/reel-yoga.mp4";
+import reelTransformation from "@/assets/reels/reel-transformation.mp4";
+import reelBuilt from "@/assets/reels/reel-built.mp4";
 
 interface Reel {
   id: number;
@@ -31,6 +34,24 @@ const reels: Reel[] = [
     id: 3,
     video: reelDance,
     title: "Dance & Rhythm",
+    instagramUrl: "https://www.instagram.com/allfit_c_block/",
+  },
+  {
+    id: 4,
+    video: reelYoga,
+    title: "Yoga Session",
+    instagramUrl: "https://www.instagram.com/allfit_c_block/",
+  },
+  {
+    id: 5,
+    video: reelTransformation,
+    title: "Transformation Sessions",
+    instagramUrl: "https://www.instagram.com/allfit_c_block/",
+  },
+  {
+    id: 6,
+    video: reelBuilt,
+    title: "Built Brick by Brick",
     instagramUrl: "https://www.instagram.com/allfit_c_block/",
   },
 ];
