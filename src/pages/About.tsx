@@ -159,11 +159,11 @@ const About = () => {
         </div>
       </section>
 
-      {/* Gallery Section */}
-      <GymGallery />
-
       {/* Instagram Reels Section */}
       <InstagramReels />
+
+      {/* Gallery Section */}
+      <GymGallery />
 
       <Footer />
     </div>
