@@ -20,22 +20,21 @@ const Hero = () => {
       */}
       <section className="relative min-h-screen w-full flex items-end md:items-center justify-center overflow-hidden">
         
-        {/* BACKGROUND IMAGE CONTAINER:
-          'inset-0' and 'absolute' ensure it fills the entire parent from (0,0).
-          'z-0' keeps it behind the text.
-        */}
+       {/* BACKGROUND IMAGE CONTAINER */}
         <div 
-  className="absolute inset-0 w-full h-full z-0" 
-  style={{
-    backgroundImage: `url(${heroImage})`,
-    backgroundSize: "cover",
-    backgroundPosition: "center top",
-    backgroundRepeat: "no-repeat",
-  }}
->
-  {/* This single line allows the image to be visible at the top behind the navbar */}
-  <div className="absolute inset-0 bg-black/40" />
-</div>
+          className="absolute inset-0 w-full h-full z-0" 
+          style={{
+            backgroundImage: `url(${heroImage})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center top",
+            backgroundRepeat: "no-repeat",
+          }}
+        >
+          {/* REMOVED: The bg-gradient-to-b from-background/80 
+             ADDED: A simple low-opacity tint so the image is 100% visible 
+          */}
+          <div className="absolute inset-0 bg-black/30" />
+        </div>
 
         {/* Content - relative z-10 puts it above the image */}
         <div className="relative z-10 container mx-auto px-4 text-center pb-16 md:pb-0">
