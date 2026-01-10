@@ -7,35 +7,32 @@ const Hero = () => {
   const [isFormOpen, setIsFormOpen] = useState(false);
 
   const handleJoinNow = () => {
-    const message = encodeURIComponent("Hello ALL FIT! 👋\n\nI am interested in joining your gym. Could you please share the pricing details and membership plans?");
+    const message = encodeURIComponent(
+      "Hello ALL FIT! 👋\n\nI am interested in joining your gym. Could you please share the pricing details and membership plans?"
+    );
     window.open(`https://wa.me/919667949344?text=${message}`, "_blank");
   };
 
   return (
     <>
       <section className="relative min-h-screen flex items-end md:items-center justify-center overflow-hidden pb-16 md:pb-0">
-        
         {/* Background Image Wrapper */}
         <div 
           className="absolute inset-0 z-0" 
           style={{
             backgroundImage: `url(${heroImage})`,
             backgroundSize: "cover",
-            backgroundPosition: "center top", // Keeps the athlete's head visible
+            backgroundPosition: "center top",
           }}
         >
-          {/* FIX: Replaced complex gradients with a simple dark tint.
-             bg-black/50 ensures the image is visible but text pops.
+          {/* FIX: Removed the multiple bg-gradient layers that were hiding the image.
+            Using bg-black/40 creates a uniform tint so the text is readable,
+            but the image remains visible from top to bottom.
           */}
-          <div className="absolute inset-0 bg-black/50" />
-          
-          {/* Optional: A gentle fade at the very bottom so it blends 
-             into the next section, but doesn't hide the hero image.
-          */}
-          <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-black/40" />
         </div>
 
-        {/* Content */}
+        {/* Content - positioned at bottom on mobile, center on desktop */}
         <div className="relative z-10 container mx-auto px-4 text-center mb-8 md:mb-0">
           <div className="max-w-4xl mx-auto">
             <h1 
@@ -82,7 +79,7 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* Keeping this if you want a hard cut at the bottom, otherwise can be removed */}
+        {/* Bottom gradient fade - subtle transition to the next section */}
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent z-10" />
       </section>
       
