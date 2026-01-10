@@ -186,6 +186,9 @@ const Services = () => {
         </DialogContent>
       </Dialog>
 
+      {/* Instagram Reels */}
+      <InstagramReels />
+
       {/* Testimonials */}
       <Testimonials />
 
@@ -232,9 +235,6 @@ const Services = () => {
           </div>
         </div>
       </section>
-
-      {/* Instagram Reels */}
-      <InstagramReels />
 
       <Footer />
       
