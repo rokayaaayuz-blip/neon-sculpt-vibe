@@ -25,18 +25,17 @@ const Hero = () => {
           'z-0' keeps it behind the text.
         */}
         <div 
-          className="absolute inset-0 w-full h-full z-0" 
-          style={{
-            backgroundImage: `url(${heroImage})`,
-            backgroundSize: "cover",
-            backgroundPosition: "center top",
-            backgroundRepeat: "no-repeat",
-          }}
-        >
-          {/* Your original overlays kept exactly as requested (no opacity changes) */}
-          <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/60 to-background" />
-          <div className="absolute inset-0 bg-gradient-to-r from-background/90 via-transparent to-background/90" />
-        </div>
+  className="absolute inset-0 w-full h-full z-0" 
+  style={{
+    backgroundImage: `url(${heroImage})`,
+    backgroundSize: "cover",
+    backgroundPosition: "center top",
+    backgroundRepeat: "no-repeat",
+  }}
+>
+  {/* This single line allows the image to be visible at the top behind the navbar */}
+  <div className="absolute inset-0 bg-black/40" />
+</div>
 
         {/* Content - relative z-10 puts it above the image */}
         <div className="relative z-10 container mx-auto px-4 text-center pb-16 md:pb-0">
