@@ -15,25 +15,31 @@ const Hero = () => {
 
   return (
     <>
-      <section className="relative min-h-screen flex items-end md:items-center justify-center overflow-hidden pb-16 md:pb-0">
-        {/* Background Image Wrapper */}
+      {/* The section is set to min-h-screen to ensure it takes up 100% height.
+        We remove top padding to ensure content can sit behind the navbar.
+      */}
+      <section className="relative min-h-screen w-full flex items-end md:items-center justify-center overflow-hidden">
+        
+        {/* BACKGROUND IMAGE CONTAINER:
+          'inset-0' and 'absolute' ensure it fills the entire parent from (0,0).
+          'z-0' keeps it behind the text.
+        */}
         <div 
-          className="absolute inset-0 z-0" 
+          className="absolute inset-0 w-full h-full z-0" 
           style={{
             backgroundImage: `url(${heroImage})`,
             backgroundSize: "cover",
             backgroundPosition: "center top",
+            backgroundRepeat: "no-repeat",
           }}
         >
-          {/* FIX: Removed the multiple bg-gradient layers that were hiding the image.
-            Using bg-black/40 creates a uniform tint so the text is readable,
-            but the image remains visible from top to bottom.
-          */}
-          <div className="absolute inset-0 bg-black/40" />
+          {/* Your original overlays kept exactly as requested (no opacity changes) */}
+          <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/60 to-background" />
+          <div className="absolute inset-0 bg-gradient-to-r from-background/90 via-transparent to-background/90" />
         </div>
 
-        {/* Content - positioned at bottom on mobile, center on desktop */}
-        <div className="relative z-10 container mx-auto px-4 text-center mb-8 md:mb-0">
+        {/* Content - relative z-10 puts it above the image */}
+        <div className="relative z-10 container mx-auto px-4 text-center pb-16 md:pb-0">
           <div className="max-w-4xl mx-auto">
             <h1 
               className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display uppercase leading-tight mb-4 animate-fade-up" 
@@ -79,7 +85,7 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* Bottom gradient fade - subtle transition to the next section */}
+        {/* Subtle bottom fade transition */}
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent z-10" />
       </section>
       
