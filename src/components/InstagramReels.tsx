@@ -6,6 +6,9 @@ import { Dialog, DialogContent } from "@/components/ui/dialog";
 import reelAbhay from "@/assets/reels/reel-abhay.mp4";
 import reelBackDay from "@/assets/reels/reel-back-day.mp4";
 import reelDance from "@/assets/reels/reel-dance.mp4";
+import reelYoga from "@/assets/reels/reel-yoga.mp4";
+import reelTransformation from "@/assets/reels/reel-transformation.mp4";
+import reelBuilt from "@/assets/reels/reel-built.mp4";
 
 interface Reel {
   id: number;
@@ -33,8 +36,76 @@ const reels: Reel[] = [
     title: "Dance & Rhythm",
     instagramUrl: "https://www.instagram.com/allfit_c_block/",
   },
+  {
+    id: 4,
+    video: reelYoga,
+    title: "Yoga Session",
+    instagramUrl: "https://www.instagram.com/allfit_c_block/",
+  },
+  {
+    id: 5,
+    video: reelTransformation,
+    title: "Transformation Sessions",
+    instagramUrl: "https://www.instagram.com/allfit_c_block/",
+  },
+  {
+    id: 6,
+    video: reelBuilt,
+    title: "Built Brick by Brick",
+    instagramUrl: "https://www.instagram.com/allfit_c_block/",
+  },
 ];
 
+const ReelCard = ({ reel, onClick }: { reel: Reel; onClick: () => void }) => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  const handleMouseEnter = () => {
+    if (videoRef.current) {
+      videoRef.current.currentTime = 0;
+      videoRef.current.play().catch(() => {});
+    }
+  };
+
+  const handleMouseLeave = () => {
+    if (videoRef.current) {
+      videoRef.current.pause();
+      videoRef.current.currentTime = 0;
+    }
+  };
+
+  return (
+    <div
+      onClick={onClick}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      className="relative aspect-[9/16] rounded-2xl overflow-hidden cursor-pointer group bg-card border border-border/50 hover:border-primary/50 transition-all duration-300"
+    >
+      {/* Video Thumbnail with hover preview */}
+      <video
+        ref={videoRef}
+        src={reel.video}
+        className="w-full h-full object-cover"
+        muted
+        loop
+        playsInline
+        preload="metadata"
+      />
+
+      {/* Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-300" />
+
+      {/* Play Button - hide on hover */}
+      <div className="absolute inset-0 flex items-center justify-center group-hover:opacity-0 transition-opacity duration-300">
+        <div className="w-14 h-14 md:w-16 md:h-16 rounded-full bg-primary/90 flex items-center justify-center shadow-lg">
+          <Play className="w-6 h-6 md:w-7 md:h-7 text-primary-foreground ml-1" fill="currentColor" />
+        </div>
+      </div>
+
+      {/* Hover Glow Effect */}
+      <div className="absolute inset-0 rounded-2xl ring-2 ring-transparent group-hover:ring-primary/30 transition-all duration-300" />
+    </div>
+  );
+};
 
 const InstagramReels = () => {
   const [selectedReel, setSelectedReel] = useState<Reel | null>(null);
@@ -70,33 +141,11 @@ const InstagramReels = () => {
         {/* Reels Grid - 2 cols mobile, 3 cols desktop */}
         <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
           {reels.map((reel) => (
-            <div
+            <ReelCard
               key={reel.id}
+              reel={reel}
               onClick={() => handleReelClick(reel)}
-              className="relative aspect-[9/16] rounded-2xl overflow-hidden cursor-pointer group bg-card border border-border/50 hover:border-primary/50 transition-all duration-300"
-            >
-              {/* Video Thumbnail - first frame as poster */}
-              <video
-                src={reel.video}
-                className="w-full h-full object-cover"
-                muted
-                playsInline
-                preload="metadata"
-              />
-
-              {/* Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-300" />
-
-              {/* Play Button */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-14 h-14 md:w-16 md:h-16 rounded-full bg-primary/90 flex items-center justify-center transform group-hover:scale-110 transition-transform duration-300 shadow-lg">
-                  <Play className="w-6 h-6 md:w-7 md:h-7 text-primary-foreground ml-1" fill="currentColor" />
-                </div>
-              </div>
-
-              {/* Hover Glow Effect */}
-              <div className="absolute inset-0 rounded-2xl ring-2 ring-transparent group-hover:ring-primary/30 transition-all duration-300" />
-            </div>
+            />
           ))}
         </div>
 
