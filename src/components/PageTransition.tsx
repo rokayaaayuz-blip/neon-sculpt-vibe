@@ -1,25 +1,46 @@
 import { motion } from "framer-motion";
-import { ReactNode } from "react";
+import { useEffect, ReactNode } from "react";
 
 interface PageTransitionProps {
   children: ReactNode;
 }
 
-import { useEffect } from "react";
+const pageVariants = {
+  initial: {
+    opacity: 0,
+    y: 20,
+    scale: 0.98,
+  },
+  animate: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+  },
+  exit: {
+    opacity: 0,
+    y: -20,
+    scale: 0.98,
+  },
+};
 
-const PageTransition = ({ children }: { children: React.ReactNode }) => {
+const pageTransition = {
+  type: "tween" as const,
+  ease: [0.25, 0.1, 0.25, 1] as [number, number, number, number],
+  duration: 0.5,
+};
 
+const PageTransition = ({ children }: PageTransitionProps) => {
   useEffect(() => {
-    // Scroll to top when component mounts
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: -20 }}
-      transition={{ duration: 0.4, ease: "easeInOut" }}
+      initial="initial"
+      animate="animate"
+      exit="exit"
+      variants={pageVariants}
+      transition={pageTransition}
     >
       {children}
     </motion.div>
