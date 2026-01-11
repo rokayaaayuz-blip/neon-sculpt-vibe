@@ -6,6 +6,8 @@ import { ArrowRight } from "lucide-react";
 import WhatsAppForm from "@/components/WhatsAppForm";
 import InstagramReels from "@/components/InstagramReels";
 import Testimonials from "@/components/Testimonials";
+import PageTransition from "@/components/PageTransition";
+import ScrollReveal from "@/components/ScrollReveal";
 import {
   Dialog,
   DialogContent,
@@ -109,141 +111,151 @@ const Services = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background overflow-x-hidden">
-      <Navbar />
-      
-      {/* Hero Section */}
-      <section className="pt-28 pb-10 bg-gradient-to-b from-card to-background">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-display uppercase mb-4">
-            Our <span className="accent-text-green">Services</span>
-          </h1>
-          <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
-            Everything you need to achieve your fitness goals, all under one roof.
-          </p>
-        </div>
-      </section>
-
-{/* Services Grid */}
-      <section className="py-12">
-        <div className="container mx-auto px-4">
-          <h2 className="text-2xl md:text-3xl font-display uppercase text-center mb-8">
-            What We <span className="accent-text-green">Offer</span>
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
-            {services.map((service, index) => (
-              <button
-                key={index}
-                onClick={() => setSelectedService(service)}
-                className="glow-card overflow-hidden hover-lift animate-fade-up opacity-0 text-left cursor-pointer"
-                style={{ animationDelay: `${index * 0.1}s` }}
-                aria-label={`Learn more about ${service.title}`}
-              >
-                <div className="aspect-[4/3] overflow-hidden relative">
-                  <img
-                    src={service.image}
-                    alt={service.title}
-                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent pointer-events-none" />
-                </div>
-                <div className="p-4">
-                  <h3 className="text-lg font-display uppercase mb-2 text-foreground">
-                    {service.title}
-                  </h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">
-                    {service.description}
-                  </p>
-                </div>
-              </button>
-            ))}
+    <PageTransition>
+      <div className="min-h-screen bg-background overflow-x-hidden">
+        <Navbar />
+        
+        {/* Hero Section */}
+        <section className="pt-28 pb-10 bg-gradient-to-b from-card to-background">
+          <div className="container mx-auto px-4 text-center">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-display uppercase mb-4">
+              Our <span className="accent-text-green">Services</span>
+            </h1>
+            <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
+              Everything you need to achieve your fitness goals, all under one roof.
+            </p>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Service Detail Dialog */}
-      <Dialog open={!!selectedService} onOpenChange={() => setSelectedService(null)}>
-        <DialogContent className="sm:max-w-2xl">
-          {selectedService && (
-            <>
-              <div className="aspect-video overflow-hidden rounded-lg mb-4">
-                <img
-                  src={selectedService.image}
-                  alt={selectedService.title}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <DialogHeader>
-                <DialogTitle className="text-xl md:text-2xl font-display uppercase tracking-wide">
-                  {selectedService.title}
-                </DialogTitle>
-                <DialogDescription className="text-base text-foreground/80 leading-relaxed pt-3">
-                  {selectedService.fullDescription}
-                </DialogDescription>
-              </DialogHeader>
-            </>
-          )}
-        </DialogContent>
-      </Dialog>
-
-      {/* Instagram Reels */}
-      <InstagramReels />
-
-      {/* Testimonials */}
-      <Testimonials />
-
-      {/* CTA Section */}
-      <section className="py-12 bg-card/50">
-        <div className="container mx-auto px-4">
-          <div className="glow-card p-6 md:p-10 text-center relative overflow-hidden">
-            <div className="absolute -top-20 -left-20 w-40 h-40 bg-primary/10 rounded-full blur-3xl" />
-            <div className="absolute -bottom-20 -right-20 w-40 h-40 bg-accent/10 rounded-full blur-3xl" />
-            
-            <div className="relative z-10">
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-display uppercase mb-4">
-                Ready to <span className="accent-text-purple">Get Started?</span>
+        {/* Services Grid */}
+        <ScrollReveal>
+          <section className="py-12">
+            <div className="container mx-auto px-4">
+              <h2 className="text-2xl md:text-3xl font-display uppercase text-center mb-8">
+                What We <span className="accent-text-green">Offer</span>
               </h2>
-              
-              <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto mb-6">
-                Take the first step towards your fitness transformation today.
-              </p>
-
-              <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                <Button 
-                  variant="cta" 
-                  size="lg" 
-                  className="group px-8"
-                  onClick={() => {
-                    setFormType("assessment");
-                    setIsFormOpen(true);
-                  }}
-                >
-                  Book a Free Assessment
-                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                </Button>
-                <Button 
-                  variant="outline" 
-                  size="lg" 
-                  className="group px-8"
-                  onClick={handleTalkToTrainer}
-                >
-                  Talk to a Trainer
-                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                </Button>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+                {services.map((service, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setSelectedService(service)}
+                    className="glow-card overflow-hidden hover-lift animate-fade-up opacity-0 text-left cursor-pointer"
+                    style={{ animationDelay: `${index * 0.1}s` }}
+                    aria-label={`Learn more about ${service.title}`}
+                  >
+                    <div className="aspect-[4/3] overflow-hidden relative">
+                      <img
+                        src={service.image}
+                        alt={service.title}
+                        className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent pointer-events-none" />
+                    </div>
+                    <div className="p-4">
+                      <h3 className="text-lg font-display uppercase mb-2 text-foreground">
+                        {service.title}
+                      </h3>
+                      <p className="text-muted-foreground text-sm leading-relaxed">
+                        {service.description}
+                      </p>
+                    </div>
+                  </button>
+                ))}
               </div>
             </div>
-          </div>
-        </div>
-      </section>
+          </section>
+        </ScrollReveal>
 
-      <Footer />
-      
-      <WhatsAppForm 
-        isOpen={isFormOpen} 
-        onClose={() => setIsFormOpen(false)} 
-        formType={formType}
-      />
-    </div>
+        {/* Service Detail Dialog */}
+        <Dialog open={!!selectedService} onOpenChange={() => setSelectedService(null)}>
+          <DialogContent className="sm:max-w-2xl">
+            {selectedService && (
+              <>
+                <div className="aspect-video overflow-hidden rounded-lg mb-4">
+                  <img
+                    src={selectedService.image}
+                    alt={selectedService.title}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <DialogHeader>
+                  <DialogTitle className="text-xl md:text-2xl font-display uppercase tracking-wide">
+                    {selectedService.title}
+                  </DialogTitle>
+                  <DialogDescription className="text-base text-foreground/80 leading-relaxed pt-3">
+                    {selectedService.fullDescription}
+                  </DialogDescription>
+                </DialogHeader>
+              </>
+            )}
+          </DialogContent>
+        </Dialog>
+
+        {/* Instagram Reels */}
+        <ScrollReveal>
+          <InstagramReels />
+        </ScrollReveal>
+
+        {/* Testimonials */}
+        <ScrollReveal>
+          <Testimonials />
+        </ScrollReveal>
+
+        {/* CTA Section */}
+        <ScrollReveal>
+          <section className="py-12 bg-card/50">
+            <div className="container mx-auto px-4">
+              <div className="glow-card p-6 md:p-10 text-center relative overflow-hidden">
+                <div className="absolute -top-20 -left-20 w-40 h-40 bg-primary/10 rounded-full blur-3xl" />
+                <div className="absolute -bottom-20 -right-20 w-40 h-40 bg-accent/10 rounded-full blur-3xl" />
+                
+                <div className="relative z-10">
+                  <h2 className="text-2xl md:text-3xl lg:text-4xl font-display uppercase mb-4">
+                    Ready to <span className="accent-text-purple">Get Started?</span>
+                  </h2>
+                  
+                  <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto mb-6">
+                    Take the first step towards your fitness transformation today.
+                  </p>
+
+                  <div className="flex flex-col sm:flex-row gap-3 justify-center">
+                    <Button 
+                      variant="cta" 
+                      size="lg" 
+                      className="group px-8"
+                      onClick={() => {
+                        setFormType("assessment");
+                        setIsFormOpen(true);
+                      }}
+                    >
+                      Book a Free Assessment
+                      <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                    </Button>
+                    <Button 
+                      variant="outline" 
+                      size="lg" 
+                      className="group px-8"
+                      onClick={handleTalkToTrainer}
+                    >
+                      Talk to a Trainer
+                      <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </ScrollReveal>
+
+        <Footer />
+        
+        <WhatsAppForm 
+          isOpen={isFormOpen} 
+          onClose={() => setIsFormOpen(false)} 
+          formType={formType}
+        />
+      </div>
+    </PageTransition>
   );
 };
 
