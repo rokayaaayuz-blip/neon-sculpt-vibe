@@ -83,8 +83,8 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* Subtle bottom fade transition */}
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent z-10" />
+        {/* Dark overlay at bottom of hero */}
+        <div className="absolute bottom-0 left-0 right-0 h-48 md:h-64 bg-gradient-to-t from-background via-background/80 to-transparent z-[5]" />
       </section>
       
       <WhatsAppForm isOpen={isFormOpen} onClose={() => setIsFormOpen(false)} formType="trial" />
