@@ -3,16 +3,19 @@ import { Instagram, Play, X, ExternalLink } from "lucide-react";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 
 // Import videos as ES6 modules
-import reelAbhay from "@/assets/reels/reel-abhay.mp4";
+import reelBuilt from "@/assets/reels/reel-built-2.mp4";
 import reelBackDay from "@/assets/reels/reel-back-day.mp4";
-import reelDance from "@/assets/reels/reel-dance.mp4";
-import reelYoga from "@/assets/reels/reel-yoga.mp4";
-import reelTransformation from "@/assets/reels/reel-transformation.mp4";
-import reelBuilt from "@/assets/reels/reel-built.mp4";
+import reelDance from "@/assets/reels/reel-dance-2.mp4";
+
+// Import thumbnails
+import thumbnailBuilt from "@/assets/reels/reel-built-thumbnail.webp";
+import thumbnailBackDay from "@/assets/reels/reel-back-day-thumbnail.webp";
+import thumbnailDance from "@/assets/reels/reel-dance-thumbnail.webp";
 
 interface Reel {
   id: number;
   video: string;
+  thumbnail: string;
   title: string;
   instagramUrl: string;
 }
@@ -20,46 +23,33 @@ interface Reel {
 const reels: Reel[] = [
   {
     id: 1,
-    video: reelAbhay,
-    title: "Abhay's Journey",
+    video: reelBuilt,
+    thumbnail: thumbnailBuilt,
+    title: "Built Brick by Brick",
     instagramUrl: "https://www.instagram.com/allfit_c_block/",
   },
   {
     id: 2,
     video: reelBackDay,
+    thumbnail: thumbnailBackDay,
     title: "Back Day Workout",
     instagramUrl: "https://www.instagram.com/allfit_c_block/",
   },
   {
     id: 3,
     video: reelDance,
+    thumbnail: thumbnailDance,
     title: "Dance & Rhythm",
-    instagramUrl: "https://www.instagram.com/allfit_c_block/",
-  },
-  {
-    id: 4,
-    video: reelYoga,
-    title: "Yoga Session",
-    instagramUrl: "https://www.instagram.com/allfit_c_block/",
-  },
-  {
-    id: 5,
-    video: reelTransformation,
-    title: "Transformation Sessions",
-    instagramUrl: "https://www.instagram.com/allfit_c_block/",
-  },
-  {
-    id: 6,
-    video: reelBuilt,
-    title: "Built Brick by Brick",
     instagramUrl: "https://www.instagram.com/allfit_c_block/",
   },
 ];
 
 const ReelCard = ({ reel, onClick }: { reel: Reel; onClick: () => void }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const [isHovering, setIsHovering] = useState(false);
 
   const handleMouseEnter = () => {
+    setIsHovering(true);
     if (videoRef.current) {
       videoRef.current.currentTime = 0;
       videoRef.current.play().catch(() => {});
@@ -67,6 +57,7 @@ const ReelCard = ({ reel, onClick }: { reel: Reel; onClick: () => void }) => {
   };
 
   const handleMouseLeave = () => {
+    setIsHovering(false);
     if (videoRef.current) {
       videoRef.current.pause();
       videoRef.current.currentTime = 0;
@@ -80,11 +71,22 @@ const ReelCard = ({ reel, onClick }: { reel: Reel; onClick: () => void }) => {
       onMouseLeave={handleMouseLeave}
       className="relative aspect-[9/16] rounded-2xl overflow-hidden cursor-pointer group bg-card border border-border/50 hover:border-primary/50 transition-all duration-300"
     >
-      {/* Video Thumbnail with hover preview */}
+      {/* Thumbnail Image - shown by default */}
+      <img
+        src={reel.thumbnail}
+        alt={reel.title}
+        className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-300 ${
+          isHovering ? "opacity-0" : "opacity-100"
+        }`}
+      />
+
+      {/* Video - shown on hover */}
       <video
         ref={videoRef}
         src={reel.video}
-        className="w-full h-full object-cover"
+        className={`w-full h-full object-cover transition-opacity duration-300 ${
+          isHovering ? "opacity-100" : "opacity-0"
+        }`}
         muted
         loop
         playsInline
@@ -138,7 +140,7 @@ const InstagramReels = () => {
           </p>
         </div>
 
-        {/* Reels Grid - 2 cols mobile, 3 cols desktop */}
+        {/* Reels Grid - 3 cols */}
         <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4">
           {reels.map((reel) => (
             <ReelCard
