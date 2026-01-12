@@ -62,7 +62,7 @@ const WhyChooseSection = () => {
   const [selectedFeature, setSelectedFeature] = useState<(typeof features)[0] | null>(null);
 
   return (
-    <section className="py-24 bg-card/30">
+    <section className="py-24 bg-muted/50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-display uppercase mb-4">
@@ -86,7 +86,7 @@ const WhyChooseSection = () => {
                   alt={feature.text}
                   className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
               </div>
               <div className="p-5">
                 <span className="text-foreground font-medium">{feature.text}</span>

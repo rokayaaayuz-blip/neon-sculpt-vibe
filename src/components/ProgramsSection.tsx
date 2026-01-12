@@ -29,7 +29,7 @@ const programs = [
 
 const ProgramsSection = () => {
   return (
-    <section className="py-24 bg-card/30">
+    <section className="py-24 bg-muted/50">
       <div className="container mx-auto px-4">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-display uppercase mb-6">

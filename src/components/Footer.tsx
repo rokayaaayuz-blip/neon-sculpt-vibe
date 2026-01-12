@@ -33,7 +33,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="py-12 bg-card border-t border-border/30">
+    <footer className="py-12 bg-muted border-t border-border">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           {/* Logo & About */}
