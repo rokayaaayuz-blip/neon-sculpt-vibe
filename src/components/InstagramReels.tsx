@@ -94,7 +94,7 @@ const ReelCard = ({ reel, onClick }: { reel: Reel; onClick: () => void }) => {
       />
 
       {/* Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-300" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-300" />
 
       {/* Play Button - hide on hover */}
       <div className="absolute inset-0 flex items-center justify-center group-hover:opacity-0 transition-opacity duration-300">
@@ -125,7 +125,7 @@ const InstagramReels = () => {
   };
 
   return (
-    <section className="py-24 bg-card/30 w-full overflow-hidden">
+    <section className="py-24 bg-muted/50 w-full overflow-hidden">
       <div className="w-full max-w-6xl mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-12">

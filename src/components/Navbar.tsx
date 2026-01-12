@@ -74,7 +74,7 @@ const Navbar = () => {
 
       {/* Desktop Floating Navbar */}
       <div className="fixed top-0 left-1/2 -translate-x-1/2 z-50 pt-6 hidden md:block">
-        <div className="flex items-center gap-3 bg-background/5 border border-border backdrop-blur-lg py-1 px-1 rounded-full shadow-lg">
+        <div className="flex items-center gap-3 bg-white/80 border border-black/5 backdrop-blur-lg py-1 px-1 rounded-full shadow-lg">
           {navItems.map((item) => {
             const Icon = item.icon;
             const isActive = activeTab === item.name;
@@ -128,7 +128,7 @@ const Navbar = () => {
 
       {/* Mobile Menu Button */}
       <button
-        className="md:hidden fixed top-4 right-4 z-50 p-3 rounded-full bg-secondary/80 backdrop-blur-sm border border-border"
+        className="md:hidden fixed top-4 right-4 z-50 p-3 rounded-full bg-white/80 backdrop-blur-sm border border-black/5 shadow-md"
         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
       >
@@ -141,7 +141,7 @@ const Navbar = () => {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
-          className="md:hidden fixed inset-0 z-40 bg-background/95 backdrop-blur-xl pt-24 px-6"
+          className="md:hidden fixed inset-0 z-40 bg-white/95 backdrop-blur-xl pt-24 px-6"
         >
           <div className="flex flex-col gap-4">
             {navItems.map((item) => {
@@ -160,7 +160,7 @@ const Navbar = () => {
                     "flex items-center gap-4 p-4 rounded-2xl transition-colors",
                     isActive
                       ? "bg-primary/10 text-primary"
-                      : "text-foreground/80 hover:bg-secondary"
+                      : "text-foreground/80 hover:bg-muted"
                   )}
                 >
                   <Icon size={24} />
