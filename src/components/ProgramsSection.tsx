@@ -42,7 +42,7 @@ const ProgramsSection = () => {
           {programs.map((program, index) => (
             <div
               key={index}
-              className="glass-card p-8 hover-lift group cursor-pointer relative overflow-hidden"
+              className="water-glass-card p-8 hover-lift group cursor-pointer relative overflow-hidden"
             >
               {/* Neon accent line */}
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />

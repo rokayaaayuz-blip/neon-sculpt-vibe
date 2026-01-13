@@ -35,16 +35,17 @@ const TrainingZones = () => {
           {zones.map((zone, index) => (
             <div
               key={index}
-              className="relative rounded-3xl overflow-hidden group hover-lift animate-fade-up opacity-0"
+              className="relative rounded-3xl overflow-hidden group hover-lift animate-fade-up opacity-0 water-glass-card"
               style={{ animationDelay: `${index * 0.2}s` }}
             >
-              <img
-                src={zone.image}
-                alt={zone.title}
-                loading="lazy"
-                className="w-full h-[400px] object-cover transition-transform duration-700 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+              <div className="relative image-vignette">
+                <img
+                  src={zone.image}
+                  alt={zone.title}
+                  loading="lazy"
+                  className="w-full h-[400px] object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+              </div>
               
               {/* Content */}
               <div className="absolute bottom-0 left-0 right-0 p-8">

@@ -28,11 +28,11 @@ const Hero = () => {
           <div className="max-w-4xl mx-auto">
             <h1 
               className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display uppercase leading-tight mb-4 animate-fade-up" 
-              style={{ animationDelay: "0.1s" }}
+              style={{ animationDelay: "0.1s", background: "none", WebkitTextFillColor: "unset" }}
             >
-              <span className="text-white drop-shadow-lg">Train Strong.</span>{" "}
-              <span className="text-white drop-shadow-lg">Live Fit.</span>{" "}
-              <span className="text-primary drop-shadow-lg">Stay Consistent.</span>
+              <span className="text-black drop-shadow-lg">Train Strong.</span>{" "}
+              <span className="text-black drop-shadow-lg">Live Fit.</span>{" "}
+              <span className="text-primary drop-shadow-lg" style={{ WebkitTextFillColor: "unset" }}>Stay Consistent.</span>
             </h1>
             
             <p 

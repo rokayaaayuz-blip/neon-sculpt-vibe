@@ -96,8 +96,13 @@
     --glass-bg: hsl(0 0% 100% / 0.8);
     --glass-border: hsl(0 0% 0% / 0.08);
 
-    /* ========== SIGNATURE GRADIENT (Dark text to Magenta for light bg) ========== */
-    --gradient-primary: linear-gradient(90deg, #1a1a1a 0%, #1a1a1a 40%, #FF21FF 60%, #FF21FF 100%);
+    /* ========== SIGNATURE GRADIENT (Pure Black to Magenta for light bg) ========== */
+    --gradient-primary: linear-gradient(90deg, #000000 0%, #000000 40%, #FF21FF 60%, #FF21FF 100%);
+
+    /* ========== WATER BLUE GLASSMORPHISM ========== */
+    --water-blue: 195 85% 60%;
+    --water-glass-bg: 195 85% 70%;
+    --water-glass-border: 195 85% 60%;
   }
 }
 
@@ -116,45 +121,66 @@
 }
 
 @layer components {
+  /* Water Blue Glass Card - Translucent aqua glassmorphism */
+  .water-glass-card {
+    @apply backdrop-blur-xl rounded-2xl transition-all duration-300 relative overflow-hidden;
+    background: hsl(195 85% 70% / 0.12);
+    border: 1px solid hsl(195 85% 60% / 0.25);
+    box-shadow: 
+      inset 0 1px 0 0 hsl(195 85% 90% / 0.3),
+      0 4px 20px hsl(195 85% 50% / 0.1);
+  }
+
+  .water-glass-card:hover {
+    box-shadow: 
+      inset 0 1px 0 0 hsl(195 85% 90% / 0.4),
+      0 8px 30px hsl(195 85% 50% / 0.2),
+      0 4px 20px hsl(0 0% 0% / 0.08);
+  }
+
   .glass-card {
-    @apply bg-white/80 backdrop-blur-xl border border-black/5 rounded-2xl shadow-sm;
+    @apply backdrop-blur-xl rounded-2xl shadow-sm;
+    background: hsl(195 85% 70% / 0.12);
+    border: 1px solid hsl(195 85% 60% / 0.2);
+    box-shadow: inset 0 1px 0 0 hsl(195 85% 90% / 0.25);
   }
 
   .glow-card {
-    @apply bg-card border border-black/5 rounded-2xl transition-all duration-300 relative overflow-hidden;
-    box-shadow: 0 4px 20px hsl(0 0% 0% / 0.08);
-  }
-
-  .glow-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    border-radius: inherit;
-    padding: 1px;
-    background: linear-gradient(
-      135deg, 
-      hsl(300 100% 56% / 0.15) 0%, 
-      hsl(300 100% 56% / 0.1) 100%
-    );
-    -webkit-mask: 
-      linear-gradient(#fff 0 0) content-box, 
-      linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-    pointer-events: none;
-    opacity: 0.5;
-    transition: opacity 0.3s ease;
-  }
-
-  .glow-card:hover::before {
-    opacity: 1;
+    @apply backdrop-blur-xl rounded-2xl transition-all duration-300 relative overflow-hidden;
+    background: hsl(195 85% 70% / 0.12);
+    border: 1px solid hsl(195 85% 60% / 0.25);
+    box-shadow: 
+      inset 0 1px 0 0 hsl(195 85% 90% / 0.3),
+      0 4px 20px hsl(195 85% 50% / 0.1);
   }
 
   .glow-card:hover {
-    box-shadow: 0 8px 30px hsl(300 100% 56% / 0.15), 0 4px 20px hsl(0 0% 0% / 0.1);
+    box-shadow: 
+      inset 0 1px 0 0 hsl(195 85% 90% / 0.4),
+      0 8px 30px hsl(195 85% 50% / 0.2),
+      0 4px 20px hsl(0 0% 0% / 0.08);
+  }
+
+  /* Image Vignette - Subtle black gradient at bottom */
+  .image-vignette {
+    @apply relative;
+  }
+
+  .image-vignette::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50%;
+    background: linear-gradient(
+      to top,
+      hsl(0 0% 0% / 0.5) 0%,
+      hsl(0 0% 0% / 0.25) 30%,
+      transparent 100%
+    );
+    pointer-events: none;
+    border-radius: inherit;
   }
 
   .accent-text-green {
@@ -165,18 +191,18 @@
     @apply text-accent;
   }
 
-  /* Signature gradient for headings - Primary Gradient (Dark to Magenta for light bg) */
+  /* Signature gradient for headings - Pure Black to Magenta for light bg */
   h1, h2, h3, h4,
   .heading-gradient {
-    background: linear-gradient(90deg, #1a1a1a 0%, #1a1a1a 40%, #FF21FF 60%, #FF21FF 100%);
+    background: linear-gradient(90deg, #000000 0%, #000000 40%, #FF21FF 60%, #FF21FF 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
   }
 
-  /* Alternative: Split gradient (dark to magenta) */
+  /* Alternative: Split gradient (pure black to magenta) */
   .heading-gradient-split {
-    background: linear-gradient(90deg, #1a1a1a 0%, #1a1a1a 40%, #FF21FF 60%, #FF21FF 100%);
+    background: linear-gradient(90deg, #000000 0%, #000000 40%, #FF21FF 60%, #FF21FF 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;

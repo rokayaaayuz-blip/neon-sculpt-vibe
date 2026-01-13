@@ -76,17 +76,16 @@ const WhyChooseSection = () => {
             <button
               key={index}
               onClick={() => setSelectedFeature(feature)}
-              className="glow-card overflow-hidden hover-lift animate-fade-up opacity-0 text-left cursor-pointer"
+              className="water-glass-card overflow-hidden hover-lift animate-fade-up opacity-0 text-left cursor-pointer"
               style={{ animationDelay: `${index * 0.1}s` }}
               aria-label={`Learn more about ${feature.text}`}
             >
-              <div className="aspect-[4/3] overflow-hidden relative">
+              <div className="aspect-[4/3] overflow-hidden relative image-vignette">
                 <img
                   src={feature.image}
                   alt={feature.text}
                   className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent pointer-events-none" />
               </div>
               <div className="p-5">
                 <span className="text-foreground font-medium">{feature.text}</span>
@@ -97,7 +96,7 @@ const WhyChooseSection = () => {
 
         {/* Closing statement */}
         <div className="max-w-2xl mx-auto">
-          <div className="glow-card p-8 text-center border-primary/30">
+          <div className="water-glass-card p-8 text-center">
             <p className="text-xl md:text-2xl font-display uppercase">
               At <span className="accent-text-green">ALL FIT</span>, every workout is purposeful.
             </p>

@@ -39,9 +39,9 @@ const CoachesSection = () => {
           {coaches.map((coach, index) => (
             <div
               key={index}
-              className="group relative overflow-hidden rounded-3xl cursor-pointer hover-lift"
+              className="group relative overflow-hidden rounded-3xl cursor-pointer hover-lift water-glass-card"
             >
-              <div className="aspect-[3/4] overflow-hidden">
+              <div className="aspect-[3/4] overflow-hidden relative image-vignette">
                 <img
                   src={coach.image}
                   alt={coach.name}
@@ -49,8 +49,6 @@ const CoachesSection = () => {
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
               </div>
-              {/* Overlay gradient */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
               {/* Content */}
               <div className="absolute bottom-0 left-0 right-0 p-6">
                 <h3 className="text-2xl font-display uppercase mb-1 text-white">
